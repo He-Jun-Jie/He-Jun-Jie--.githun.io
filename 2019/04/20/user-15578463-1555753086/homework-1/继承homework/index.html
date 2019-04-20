@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <h5 id="1-建立一个汽车类Auto，包括轮胎个数，汽车颜色，车身重量，速度等成员变量，并通过不同的构造方法创建实例。至少要求-汽车能够加速-减速-停车。"><a href="#1-建立一个汽车类Auto，包括轮胎个数，汽车颜色，车身重量，速度等成员变量，并通过不同的构造方法创建实例。至少要求-汽车能够加速-减速-停车。" class="headerlink" title="1.建立一个汽车类Auto，包括轮胎个数，汽车颜色，车身重量，速度等成员变量，并通过不同的构造方法创建实例。至少要求 汽车能够加速 减速 停车。"></a>1.建立一个汽车类Auto，包括轮胎个数，汽车颜色，车身重量，速度等成员变量，并通过不同的构造方法创建实例。至少要求 汽车能够加速 减速 停车。</h5><h5 id="再定义一个小汽车类CarAuto-继承Auto-并添加空调、CD等成员变量-覆盖加速-减速的方法"><a href="#再定义一个小汽车类CarAuto-继承Auto-并添加空调、CD等成员变量-覆盖加速-减速的方法" class="headerlink" title="再定义一个小汽车类CarAuto 继承Auto 并添加空调、CD等成员变量 覆盖加速 减速的方法"></a>再定义一个小汽车类CarAuto 继承Auto 并添加空调、CD等成员变量 覆盖加速 减速的方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">class Auto:</span><br><span class="line">    def __init__(self, tyre=4, color=&apos;&apos;, weight=0, speed=0):</span><br><span class="line">        self.tyre = tyre</span><br><span class="line">        self.color = color</span><br><span class="line">        self.weight = weight</span><br><span class="line">        self.speed = speed</span><br><span class="line">        self.__max_speed = 200</span><br><span class="line"></span><br><span class="line">    def add_speed(self, value):</span><br><span class="line">        &quot;&quot;&quot;加速&quot;&quot;&quot;</span><br><span class="line">        if self.speed + value &gt; self.__max_speed:</span><br><span class="line">            self.speed = self.__max_speed</span><br><span class="line">        else:</span><br><span class="line">            self.speed += value</span><br><span class="line"></span><br><span class="line">    def sub_speed(self, value):</span><br><span class="line">        &quot;&quot;&quot;减速&quot;&quot;&quot;</span><br><span class="line">        if self.speed - value &lt; 0:</span><br><span class="line">            self.speed = 0</span><br><span class="line"></span><br><span class="line">        else:</span><br><span class="line">            self.speed -= value</span><br><span class="line"></span><br><span class="line">    def stop(self):</span><br><span class="line">        self.speed = 0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class CarAuto(Auto):</span><br><span class="line">    def __init__(self, tyre=4, color=&apos;&apos;, weight=0, speed=0, cd=&apos;&apos;, air=&apos;&apos;):</span><br><span class="line">        super().__init__(tyre, color, weight, speed)</span><br><span class="line">        self.CD = cd</span><br><span class="line">        self.airConditioning = air</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h5 id="4-写一个类，其功能是：1-解析指定的歌词文件的内容-2-按时间显示歌词"><a href="#4-写一个类，其功能是：1-解析指定的歌词文件的内容-2-按时间显示歌词" class="headerlink" title="4.写一个类，其功能是：1.解析指定的歌词文件的内容 2.按时间显示歌词"></a>4.写一个类，其功能是：1.解析指定的歌词文件的内容 2.按时间显示歌词</h5><h5 id="提示：歌词文件的内容一般是按下面的格式进行存储的。"><a href="#提示：歌词文件的内容一般是按下面的格式进行存储的。" class="headerlink" title="提示：歌词文件的内容一般是按下面的格式进行存储的。"></a>提示：歌词文件的内容一般是按下面的格式进行存储的。</h5><h5 id="歌词前面对应的是时间，在对应的时间点可以显示对应的歌词"><a href="#歌词前面对应的是时间，在对应的时间点可以显示对应的歌词" class="headerlink" title="歌词前面对应的是时间，在对应的时间点可以显示对应的歌词"></a>歌词前面对应的是时间，在对应的时间点可以显示对应的歌词</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">class Lyric:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self._time = 0</span><br><span class="line">        self.word = &apos;&apos;</span><br><span class="line"></span><br><span class="line">    @property</span><br><span class="line">    def time(self):</span><br><span class="line">        return self._time</span><br><span class="line"></span><br><span class="line">    @time.setter</span><br><span class="line">    def time(self, value: str):</span><br><span class="line">        fen = value[1:3]</span><br><span class="line">        miao = value[4:]</span><br><span class="line">        self._time = float(fen)*60 + float(miao)</span><br><span class="line"></span><br><span class="line">    def __gt__(self, other):</span><br><span class="line">        return self.time &gt; other.time</span><br><span class="line"></span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return str(self.__dict__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class LyricAnalysis:</span><br><span class="line">    # 歌名，作为对象的属性，不同的歌对应不同的解析器对象</span><br><span class="line">    def __init__(self, song_name: str):</span><br><span class="line">        self.__song_name = song_name</span><br><span class="line">        self.__all_lyric = []</span><br><span class="line"></span><br><span class="line">    def __deal_line(self, line):</span><br><span class="line">        &quot;&quot;&quot;处理每一行的歌词&quot;&quot;&quot;</span><br><span class="line">        # print(line)</span><br><span class="line">        # 1.将时间和歌词分开</span><br><span class="line">        lines = line.split(&apos;]&apos;)</span><br><span class="line">        # 2.获取词</span><br><span class="line">        word = lines[-1]</span><br><span class="line">        times = lines[:-1]</span><br><span class="line">        for time_str in times:</span><br><span class="line">            # 创建歌词对象</span><br><span class="line">            lyric = Lyric()</span><br><span class="line">            lyric.word = word</span><br><span class="line">            lyric.time = time_str</span><br><span class="line">            # 保存歌词</span><br><span class="line">            self.__all_lyric.append(lyric)</span><br><span class="line"></span><br><span class="line">    def get_lyric(self, time):</span><br><span class="line">        &quot;&quot;&quot;获取指定时间对应的词&quot;&quot;&quot;</span><br><span class="line">        if not self.__all_lyric:</span><br><span class="line">            # 1.读文件中的内容</span><br><span class="line">            try:</span><br><span class="line">                with open(&apos;files/&apos;+self.__song_name+&apos;.lrc&apos;, encoding=&apos;utf-8&apos;) as f:</span><br><span class="line">                    # 一行一行的读，读完为止</span><br><span class="line">                    while True:</span><br><span class="line">                        line = f.readline()</span><br><span class="line">                        if not line:</span><br><span class="line">                            break</span><br><span class="line">                        else:</span><br><span class="line">                            # 处理每一行的内容，分割出时间和词</span><br><span class="line">                            self.__deal_line(line)</span><br><span class="line">            except FileNotFoundError:</span><br><span class="line">                return &apos;[~~没有歌词~~]&apos;</span><br><span class="line"></span><br><span class="line">            # 排序</span><br><span class="line">            self.__all_lyric.sort(reverse=True)</span><br><span class="line"></span><br><span class="line">        # 获取时间对应的词</span><br><span class="line">        for lyric in self.__all_lyric:</span><br><span class="line">            if lyric.time &lt; time:</span><br><span class="line">                return lyric.word</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    la1 = LyricAnalysis(&apos;蓝莲花&apos;)</span><br><span class="line">    print(la1.get_lyric(15))</span><br><span class="line">    print(la1.get_lyric(100))</span><br><span class="line"></span><br><span class="line">    la2 = LyricAnalysis(&apos;烟圈&apos;)</span><br><span class="line">    print(la2.get_lyric(20))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

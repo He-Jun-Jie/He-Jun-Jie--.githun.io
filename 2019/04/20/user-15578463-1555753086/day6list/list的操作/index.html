@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>#####1.相关运算: </p>
+<p>####a.数学运算</p>
+<ul>
+<li><p>列表1+列表2  -  将两个列表中的元素合并在一起产生一个新的列表<br>列表*N    -  列表中的元素重复N次，产生一个新的列表 </p>
+</li>
+<li><p>b.支持比较运算<br>比较大小的原理和字符串类似</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1, 2, 3]</span><br><span class="line">list2 = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line">print(list1 + list2, list1)</span><br><span class="line">print(list1*2)</span><br><span class="line"></span><br><span class="line">print([1, 2, 3] == [2, 1, 3])   # False</span><br><span class="line">print([1, 2, 3] == [1, 2, 3])   # True</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-69ff463038eb1e56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>####了解!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print([1, 2, 3, 4] &gt; [2, 3])    # False</span><br><span class="line">print([10, 20, 2] &gt; [10, 3])    # True</span><br></pre></td></tr></table></figure></p>
+<p>####2. in / not in<br>元素 in 列表    -  判断列表中是否存在指定的元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print([1, 2] in [1, 2, 3])   # False</span><br><span class="line">print([1, 2] in [[1, 2], 30, &apos;abc&apos;])   # True</span><br><span class="line">print(&apos;abc&apos; in [10, &apos;abc&apos;, True])   # True</span><br></pre></td></tr></table></figure></p>
+<p>####3. len<br>len(列表) - 获取列表中元素的个数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(len([[1, &apos;a&apos;], 2, &apos;100&apos;, True]))</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-900fee6ed9ef0e7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>####4.list(数据)   -  将其他数据转换成列表;只有序列才可以转换成列表，并且所有的序列都能转化成列表;<br>               转换的时候就是将序列中所有的元素转换成列表的元素</p>
+<h4 id="list-10-注意：不能python给我们提供的类型的名字来命名，否则会有隐患"><a href="#list-10-注意：不能python给我们提供的类型的名字来命名，否则会有隐患" class="headerlink" title="list = 10     注意：不能python给我们提供的类型的名字来命名，否则会有隐患"></a>list = 10     注意：不能python给我们提供的类型的名字来命名，否则会有隐患</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list1 = list(&apos;hello&apos;)</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">list2 = list(range(11, 21))</span><br><span class="line">print(list2)</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-2cd299cc40d9fe80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>####5.序列其他方法</p>
+<ul>
+<li>max(序列)   -  获取序列中值最大的元素</li>
+<li>min(序列)   -  获取序列中值最小的元素</li>
+<li><p>sum(序列)   -  求序列中所有元素的和</p>
+</li>
+<li><p>注意：以上三个方法，要求序列中的元素类型必须一致， 并且这个类型支持比较运算和加法运算(一般数字序列用)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">print(max([19, 89, 999, 2, 0.2]))</span><br><span class="line">print(min([19, 89, 999, 2, 0.2]))</span><br><span class="line">print(sum([19, 89, 999, 2, 0.2]))</span><br><span class="line">print(sum(range(101)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list1 = [1, 2, 3, 1, 100, 20, 30, 1]</span><br><span class="line">print(list1.count(1))</span><br><span class="line"></span><br><span class="line">list1.extend([&apos;abc&apos;, 100])</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">list1.extend(&apos;abc&apos;)</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">list1 = [1, 2, 100, 3, 1, 100, 20, 30, 1]</span><br><span class="line">print(list1.index(100))</span><br><span class="line"></span><br><span class="line">list1.reverse()</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">list1 = [1, 2, 100, 3, 1, 100, 20, 30, 1]</span><br><span class="line">list1.sort()</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">list1 = [1, 2, 100, 3, 1, 100, 20, 30, 1]</span><br><span class="line">list1.sort(reverse=True)</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">list1.clear()</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">list1 = [1, 2, 100, 3, 1, 100, 20, 30, 1]</span><br><span class="line">list2 = list1.copy()</span><br><span class="line">list3 = list1[:]</span><br><span class="line">print(list2, list3)</span><br><span class="line">print(id(list1), id(list2), id(list3))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-e298272cf06d640e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

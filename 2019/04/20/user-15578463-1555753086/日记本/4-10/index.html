@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </div>
+    </div>
+    <div class="article-content">
+        <p>~~~<br>&lt;!DOCTYPE html&gt;</p>
+<html><br>    <head><meta name="generator" content="Hexo 3.8.0"><br>        <meta charset="UTF-8"><br>        <title></title><br>        <style><br>            * {<br>                margin: 0;<br>                padding: 0;<br>            }<br>            #fruits {<br>                width: 120px;<br>                margin: 20px 20px;<br>            }<br>            #fruits&gt;li {<br>                list-style-type: none;<br>                height: 40px;<br>                color: white;<br>                background-color: #009966;<br>                line-height: 40px;<br>                text-align: center;<br>                margin-top: 2px;<br>            }<br>            #fruits&gt;li&gt;a {<br>                float: right;<br>                color: white;<br>                text-decoration: none;<br>            }<br>            #fruits~input {<br>                border: none;<br>                outline: none;<br>                text-align: center;<br>                margin: 20px 15px;<br>            }<br>            input[type=text] {<br>                border-bottom: 1px solid gray !important;<br>            }<br>            #ok {<br>                width: 80px;<br>                height: 30px;<br>                background-color: #CC3333;<br>                color: white;<br>            }<br>        </style><br>    </head><br>    <body><br>        <div id="container"><br>            <ul id="fruits"><br>                <li>苹果<a href>×</a></li><br>                <li>香蕉<a href>×</a></li><br>                <li>火龙果<a href>×</a></li><br>                <li>西瓜<a href>×</a></li><br>            </ul><br>            <input type="text" name="fruit"><br>            <input id="ok" type="button" value="确定"><br>        </div><br>        <script><br>            function addListItem() {<br>                let name = input.value.trim()<br>                if (name) {<br>                    // 通过document对象的createElement方法创建新元素<br>                    let li = document.createElement(‘li’)<br>                    // 可以用textContent或innerHTML属性来修改标签的内容<br>                    li.innerHTML = name<br>                    let a = document.createElement(‘a’)<br>                    a.innerHTML = ‘&times;’<br>                    a.href = ‘’<br>                    a.addEventListener(‘click’, removeListItem)<br>                    li.appendChild(a)<br>                    // 通过父元素的appendChild或insertBefore可以添加子元素<br>                    ul.appendChild(li)<br>                    input.value = ‘’<br>                    // 元素的focus和blur方法可以让元素获得或失去焦点<br>                    input.focus()<br>                }<br>            }<br><br>            function removeListItem(evt) {<br>                // evt.stopPropagation()<br>                // 通过事件对象的preventDefault方法阻止事件的默认行为<br>                evt.preventDefault()<br>                // 通过元素获取父元素 - parentNode<br>                // 通过元素获取子元素 - children / firstElementChild / lastElementChild<br>                // 通过元素获取兄弟元素 - previousElementSibling / nextElementSibling<br>                let li = evt.target.parentNode<br>                // 通过父元素的removeChild方法可以删除指定的子元素<br>                ul.removeChild(li)<br>            }<br><br>            const ul = document.querySelector(‘#fruits’)<br>            const input = ul.nextElementSibling<br>            input.addEventListener(‘keypress’, (evt) =&gt; {<br>                let code = evt.keyCode || evt.which<br>                if (code == 13) {<br>                    addListItem()<br>                }<br>            })<br>            const ok = input.nextElementSibling<br>            ok.addEventListener(‘click’, addListItem)<br>            let anchors = document.querySelectorAll(‘#fruits&gt;li&gt;a’)<br>            for (let i = 0; i &lt; anchors.length; i += 1) {<br>                // addEventListener方法有三个参数<br>                // 第一个参数是事件的名称，例如: click / dbclick / mouseover / mouseout<br>                // 第二个参数是事件发生时要执行的回调函数，函数的参数是事件对象:<br>                //     ~ 传入一个已有函数的名字<br>                //     ~ 写一个匿名函数 function(evt) {}<br>                //     ~ 写一个箭头函数 (evt) =&gt; {}<br>                // 第三个参数表示使用事件捕获还是事件冒泡,如果不写表示事件冒泡(从里向外传播事件)<br>                //  ~ 如果设置为true表示事件捕获(从外向里传播事件)<br>                //     ~ 如果希望阻止事件的传播行为可以调用事件对象的stopPropagation方法<br>                anchors[i].addEventListener(‘click’, removeListItem)<br>            }<br>        </script><br>    </body><br></html>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

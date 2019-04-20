@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>声明一个字典保存一个学生的信息，学生信息中包括: 姓名、年龄、成绩(单科)、电话<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">student = dict(name=&apos;小明&apos;, age=18, performance=[&#123;&apos;语文&apos;: 89, &apos;数学&apos;: 88, &apos;英语&apos;: 21&#125;], Tel=13884726472)</span><br><span class="line">print(student)</span><br></pre></td></tr></table></figure></p>
+<p>2.<br>声明一个列表，在列表中保存6个学生的信息(6<br>个题1中的字典)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">student2 = [</span><br><span class="line">    &#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 18, &apos;stu_num&apos;: 1, &apos;performance&apos;: 88, &apos;TEL&apos;: 13884726472&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;小红&apos;, &apos;age&apos;: 17, &apos;stu_num&apos;: 2, &apos;performance&apos;: 92, &apos;TEL&apos;: 16593827388&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;小白&apos;, &apos;age&apos;: 19, &apos;stu_num&apos;: 3, &apos;performance&apos;: 55, &apos;TEL&apos;: 17464528846&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;小蓝&apos;, &apos;age&apos;: 17, &apos;stu_num&apos;: 4, &apos;performance&apos;: 98, &apos;TEL&apos;: 12567383278&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;小绿&apos;, &apos;age&apos;: 20, &apos;stu_num&apos;: 5, &apos;performance&apos;: 95, &apos;TEL&apos;: 19284747374&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;小黄&apos;, &apos;age&apos;: 18, &apos;stu_num&apos;: 6, &apos;performance&apos;: 20, &apos;TEL&apos;: 16888378222&#125;</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>a.统计不及格学生的个数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">population = 0</span><br><span class="line">for stu in student2:</span><br><span class="line">    if stu[&apos;performance&apos;] &lt;= 60:</span><br><span class="line">        population += 1</span><br><span class="line">print(&apos;不合格人数有%d个&apos; % population)</span><br></pre></td></tr></table></figure></p>
+<p>b.打印不及格学生的名字和对应的成绩<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for stu in student2:</span><br><span class="line">    if stu[&apos;performance&apos;] &lt; 60:</span><br><span class="line">        print(stu[&apos;name&apos;],stu[&apos;performance&apos;])</span><br></pre></td></tr></table></figure></p>
+<p>c.统计未成年学生的个数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">time = 0</span><br><span class="line">for stu in student2:</span><br><span class="line">    if stu[&apos;age&apos;] &lt; 18:</span><br><span class="line">        time += 1</span><br><span class="line">print(&apos;未成年的学生有%d个&apos; % time)</span><br></pre></td></tr></table></figure></p>
+<p>d.打印手机尾号是8的学生的名字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for stu in student2:</span><br><span class="line">    if str(stu[&apos;TEL&apos;])[-1] == &apos;8&apos;:</span><br><span class="line">        print(stu[&apos;name&apos;])</span><br></pre></td></tr></table></figure></p>
+<p>e.打印最高分和对应的学生的名字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">num1 = 0</span><br><span class="line">names = &apos;&apos;</span><br><span class="line">for stu in student2:</span><br><span class="line">    if stu[&apos;performance&apos;] &gt; num1:</span><br><span class="line">        num1 = stu[&apos;performance&apos;]</span><br><span class="line">        names = stu[&apos;name&apos;]</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure></p>
+<p>f.将列表按学生成绩从大到小排序(挣扎一下，不行就放弃)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 方法1</span><br><span class="line">list(sorted(student2, key=lambda x: x[&apos;performance&apos;], reverse=True))</span><br><span class="line">======================</span><br><span class="line">performance1 = stundent2[0][&apos;performance&apos;]</span><br><span class="line">for index in range(1,len(student2)):</span><br><span class="line">    for stu in student2[index]:</span><br><span class="line">        if student2[index][&apos;performance&apos;] &gt; performance1:</span><br><span class="line">==========================</span><br><span class="line"># 方法2</span><br><span class="line">list1 = []</span><br><span class="line">list2 = []</span><br><span class="line">for stu in student2:</span><br><span class="line">    list1.append(stu[&apos;performance&apos;])</span><br><span class="line">list1.sort(reverse= True )</span><br><span class="line">for performance1 in list1:</span><br><span class="line">    for stu in student2:</span><br><span class="line">        if performance1 == stu[&apos;performance&apos;]:</span><br><span class="line">            list2.append(stu)</span><br><span class="line">print(list2)</span><br></pre></td></tr></table></figure></p>
+<p>3.<br>尝试实现学生管理系统的界面(见视频)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;&apos;&apos;</span><br><span class="line">===========================================================</span><br><span class="line">    1:添加学生</span><br><span class="line">    2:查看学生</span><br><span class="line">    3:修改学生信息</span><br><span class="line">    4:删除学生</span><br><span class="line">    5:退出</span><br><span class="line">===========================================================</span><br><span class="line">&apos;&apos;&apos;)</span><br><span class="line">sub = input(&apos;请在（1-5）中选择：&apos;)</span><br><span class="line">while sub == &apos;1&apos;:</span><br><span class="line">    print(&apos;请输入学生姓名：/n&apos;,&apos;请输入学生年龄/n&apos;,&apos;请输入学生学号：&apos;)</span><br><span class="line">    print(&apos;添加成功&apos;)</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

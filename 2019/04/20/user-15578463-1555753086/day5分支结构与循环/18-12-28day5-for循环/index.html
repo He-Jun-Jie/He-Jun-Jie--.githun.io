@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>#####1.为什么要使用循环<br>python中的循环结构有两种: for循环和while循环;<br>当实现某个功能的时候发现某个操作需要重复执行，这个时候就考虑使用循环</p>
+<ul>
+<li>1+2+3+…+100</li>
+<li>print(1+2+3+4+5+6+7+…+100)</li>
+<li>统计1~10000能够被13整除的数的个数</li>
+</ul>
+<p>####2.for循环</p>
+<ul>
+<li>a.语法</li>
+<li><p>for 变量 in 序列:<br>(缩进)循环体</p>
+</li>
+<li><p>b.说明</p>
+</li>
+<li>for - 关键字<br>变量 - 一个变量名,可以是已经赋值过的变量也可以是新的变量(一般是新的变量)</li>
+<li>in - 固定写法<br>序列 - 属于序列的数据; python中的序列有：字符串、列表、字典、集合、元祖、range、迭代器、生成器</li>
+<li><p>: - 固定写法<br>循环体 - 需要重复执行的代码就放在循环体中；循环体需要和for保持一个缩进</p>
+</li>
+<li><p>c.执行过程(重要！)<br>让变量去序列中取值，一个一个的取，取完为止。每取一个值，执行一次一次循环体。<br>(序列中元素的个数决定了循环体执行的次数)</p>
+</li>
+</ul>
+<p>第一次循环: char = ‘a’   print(‘===’)  print(char)<br>第二次循环: char = ‘b’   print(‘===’)  print(char)<br>第三次循环: char = ‘c’   print(‘===’)  print(char)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for char in &apos;abc&apos;:</span><br><span class="line">    print(&apos;===&apos;)</span><br><span class="line">    print(char)</span><br><span class="line">print(&apos;aaaaaaaaa&apos;)</span><br></pre></td></tr></table></figure></p>
+<h5 id="练习：给一个字符串’hosee-23jh-hs89-sssAsK’-统计这个字符串中数字字符的个数"><a href="#练习：给一个字符串’hosee-23jh-hs89-sssAsK’-统计这个字符串中数字字符的个数" class="headerlink" title="练习：给一个字符串’hosee 23jh!hs89_=sssAsK’, 统计这个字符串中数字字符的个数"></a>练习：给一个字符串’hosee 23jh!hs89_=sssAsK’, 统计这个字符串中数字字符的个数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str1 = &apos;hosee 23jh!hs89_=sssAsK&apos;</span><br><span class="line">count = 0    # 用来保存数字字符的个数，默认是0个</span><br><span class="line"></span><br><span class="line">for char in str1:</span><br><span class="line">    if &apos;0&apos; &lt;= char &lt;= &apos;9&apos;:</span><br><span class="line">        count += 1</span><br><span class="line"></span><br><span class="line">print(&apos;%s中有%d个数字字符&apos; % (str1, count))</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-0b65e094679f9c93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打印结果"></p>
+<p>####3.range函数</p>
+<ul>
+<li>range(N)   -&gt; 产生数字序列 0 ~ N-1 (N必须是整数, N大于0)</li>
+<li>range(M, N)  -&gt; 产生数字序列 M ~ N-1 (M,N必须是整数, N &gt; M)</li>
+<li>range(M, N, step) -&gt; 从M开始，每次值加step产生下一个数字，直到N前一个为止。 (M,N必须是整数, step&gt;0,N&gt;M;step&lt;0,N&lt;M)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># for num in range(1, 100, 2):</span><br><span class="line">#     print(&apos;num:&apos;, num)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="练习：计算1-2-3…-100"><a href="#练习：计算1-2-3…-100" class="headerlink" title="练习：计算1+2+3…+100"></a>练习：计算1+2+3…+100</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">运行解析图</span><br><span class="line">sum1 = 0</span><br><span class="line">num = 1   sum1 += num, sum1 = sum1+num = 0+1</span><br><span class="line">num = 2   sum1 += num, sum1 = sum1+num = 1+2</span><br><span class="line">num = 3   sum1 += num, sum1 = sum1+num = 1+2+3</span><br><span class="line">...</span><br><span class="line">num = 100  sum1 += num, sum1 = sum1+num = 1+2+3+4+..+100</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">sum1 = 0</span><br><span class="line">for num in range(1, 101):</span><br><span class="line">    sum1 += num</span><br><span class="line">print(sum1)</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-ce0956f2d50009d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打印结果"></p>
+<h5 id="练习-求100以内所有能被13或者7整除的数的和"><a href="#练习-求100以内所有能被13或者7整除的数的和" class="headerlink" title="练习: 求100以内所有能被13或者7整除的数的和"></a>练习: 求100以内所有能被13或者7整除的数的和</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum1 = 0</span><br><span class="line">for num in range(100):</span><br><span class="line">    if num % 13 == 0 or num % 7 == 0:</span><br><span class="line">        sum1 += num</span><br><span class="line">print(sum1)</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-bc981b5c543d2866.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打印结果"></p>
+<p>4.通过遍历字符串字符下标遍历字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">str1 = &apos;hello word!&apos;</span><br><span class="line">###### index是字符对应的下标, 从前往后取</span><br><span class="line">for index in range(len(str1)):</span><br><span class="line">    print(str1[index], end=&apos;&apos;)</span><br><span class="line"></span><br><span class="line">print(&apos;===========&apos;)</span><br><span class="line"># index是字符对应的下标, 从后往前取</span><br><span class="line">for index in range(-1, -len(str1)-1, -1):</span><br><span class="line">    print(str1[index], end=&apos;&apos;)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-143b395791a4d73e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打印结果"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

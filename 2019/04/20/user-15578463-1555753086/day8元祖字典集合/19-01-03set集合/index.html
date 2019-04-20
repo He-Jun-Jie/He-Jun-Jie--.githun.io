@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <ul>
+<li><p>1.什么是集合（set）<br>可变的，无序的; 元素是唯一并且不可变</p>
+</li>
+<li><p>2.字面量<br>{元素1, 元素2, 元素3…}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;1, 23, &apos;abc&apos;&#125;</span><br><span class="line">print(set1)</span><br><span class="line"># set1 = &#123;1, 23, &apos;abc&apos;, [1, 2]&#125;  # TypeError: unhashable type: &apos;list&apos;</span><br><span class="line"></span><br><span class="line"># 表示空集合</span><br><span class="line">set2 = set()</span><br><span class="line">print(type(set2))</span><br><span class="line"></span><br><span class="line">set3 = &#123;1, 2, 1, 2, 2&#125;</span><br><span class="line">print(set3)</span><br><span class="line"></span><br><span class="line"># 集合自带去重功能</span><br><span class="line">list1 = [1, 2, 1, 2, 2]</span><br><span class="line">list1 = list(set(list1))</span><br><span class="line">print(list1)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-9e17877235595645.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>####3.增删改查</p>
+<p>set1 = {1, 38, 90, 8}</p>
+<h4 id="1-查"><a href="#1-查" class="headerlink" title="1.查"></a>1.查</h4><p>####集合不能单独的获取单个元素，只能一个一个的遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;1, 38, 90, 8&#125;</span><br><span class="line">for item in set1:</span><br><span class="line">    print(item)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-d7d55ecbf0938367.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="遍历查"></p>
+<h4 id="2-增"><a href="#2-增" class="headerlink" title="2.增"></a>2.增</h4><ul>
+<li>a.集合.add(元素)  - 在集合中添加指定的元素</li>
+<li>b.集合.update(序列) - 将序列中的元素添加到集合中<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;1, 38, 90, 8&#125;</span><br><span class="line">set1.add(&apos;abc&apos;)</span><br><span class="line">print(set1)</span><br><span class="line"></span><br><span class="line">set1.update(&apos;abc&apos;)</span><br><span class="line">print(set1)</span><br><span class="line"></span><br><span class="line">set1.update(&#123;&apos;aa&apos;: 10, &apos;bb&apos;: 20&#125;)</span><br><span class="line">print(set1)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-b5ce7c79dae98d10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="add与update的增加"></p>
+<h4 id="3-删"><a href="#3-删" class="headerlink" title="3.删"></a>3.删</h4><p>集合.remove(元素)   — 删除集合中指定的元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;1, 38, 90, 8&#125;</span><br><span class="line">set1.remove(90)</span><br><span class="line">print(set1)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-624a5a08bba8b5e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="remove的删除"></p>
+<p>####4.数学集合运算</p>
+<ul>
+<li>交集(&amp;): 获取两个集合公共的元素产生一个新的集合</li>
+<li>并集(|): 将两个集合中的元素合并在一起产生一个新的集合</li>
+<li>差集(-): 集合1 - 集合2：去掉集合1中包含集合2的部分,剩下的产生一个新的集合</li>
+<li>补集(^): 将两个集合合并在一起，去掉公共部分，剩下的部分产生一个新的集合</li>
+<li>子集的判断: 集合1&gt;集合2 -&gt; 判断集合1中是否包含集合2,  集合1&lt;集合2 - 判断集合1中是否包含集合2<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;1, 2, 3, 4, 5, 6&#125;</span><br><span class="line">set2 = &#123;4, 5, 6, 7, 8&#125;</span><br><span class="line"># 交集</span><br><span class="line">print(set1 &amp; set2)  # &#123;4, 5, 6&#125;</span><br><span class="line"># 并集</span><br><span class="line">print(set1 | set2)  # &#123;1, 2, 3, 4, 5, 6, 7, 8&#125;</span><br><span class="line"># 差集</span><br><span class="line">print(set1 - set2)  # &#123;1, 2, 3&#125;</span><br><span class="line"># 补集</span><br><span class="line">print(set1 ^ set2)  # &#123;1, 2, 3, 7, 8&#125;</span><br><span class="line"></span><br><span class="line">print(&#123;1, 2, 3, 9, 18&#125; &gt; &#123;1, 2, 3, 0&#125;)   # False</span><br><span class="line">print(&#123;1, 2, 3, 9, 18&#125; &gt; &#123;1, 2, 3&#125;)     # True、</span><br><span class="line"></span><br><span class="line">print(&#123;1, 2, 3&#125; &gt; &#123;1, 2, 3&#125;)     # False</span><br><span class="line">print(&#123;1, 2, 3&#125; &gt;= &#123;1, 2, 3&#125;)    # True</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-871df5258b2b4652.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

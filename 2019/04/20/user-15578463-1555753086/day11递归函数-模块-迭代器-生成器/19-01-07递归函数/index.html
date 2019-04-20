@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>实际开发的时候，能不用递归就不用<br>1.什么是递归函数<br>函数中调用函数本身的函数就是递归函数</p>
+<p>2.递归的作用：循环能做的事情递归函数都能做<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">def func1():</span><br><span class="line">    print(&apos;====&apos;)</span><br><span class="line">    func1()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = 0</span><br><span class="line"></span><br><span class="line">def func2():</span><br><span class="line">    global a</span><br><span class="line">    if a &lt; 5:</span><br><span class="line">        print(&apos;~~~~~&apos;)</span><br><span class="line">        a += 1</span><br><span class="line">        func2()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">func2()</span><br><span class="line"></span><br><span class="line">0 &lt; 5：  a = 1   func2()</span><br><span class="line"></span><br><span class="line">1 &lt; 5    a = 2   func2()</span><br><span class="line"></span><br><span class="line">2 &lt; 5    a = 3   func2()</span><br><span class="line"></span><br><span class="line">3 &lt; 5    a = 4   func2()</span><br><span class="line">   </span><br><span class="line">4 &lt; 5    a = 5   func2()</span><br><span class="line"></span><br><span class="line">5 &lt; 5    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func2()</span><br></pre></td></tr></table></figure></p>
+<p>###3.怎么写递归函数：f(n)<br>第一步：确定临界值 - 循环结束的条件,在临界值的地方要让函数结束！<br>第二步：找关系 - 找当次循环和上次循环的关系;<br>               找f(n)和f(n-1)的关系<br>第三步: 假设函数f的功能已经实现，通过f(n-1)来实现f(n)的功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># 实现：1+2+3+...+n</span><br><span class="line"># a.for循环</span><br><span class="line"># n = 20</span><br><span class="line"># # sum1 = 0</span><br><span class="line"># # for x in range(n+1):</span><br><span class="line"># #     sum1 += x</span><br><span class="line"># # print(sum1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># b.递归</span><br><span class="line">def yt_sum(n):</span><br><span class="line">    # 1.找临界值</span><br><span class="line">    if n == 1:</span><br><span class="line">        return 1</span><br><span class="line"></span><br><span class="line">    # 2. 找关系</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    找yt_sum(n)和yt_sum(n-1)的关系</span><br><span class="line">    yt_sum(n): 1+2+3+...+n-1+n</span><br><span class="line">    yt_sum(n-1): 1+2+3+...n-1</span><br><span class="line">    yt_sum(n) = yt_sum(n-1)+n</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return yt_sum(n-1)+n</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">yt_sum(4):</span><br><span class="line">n = 4   4==1   return yt_sum(3)+4  ---&gt; return 1+2+3+4</span><br><span class="line">yt_sum(3):</span><br><span class="line">n = 3   3==1   return yt_sum(2)+3  ---&gt; return 1+2+3</span><br><span class="line">yt_sum(2):</span><br><span class="line">n = 2   2==1   return yt_sum(1)+2  ---&gt; return 1+2</span><br><span class="line">yt_sum(1):</span><br><span class="line">n = 1   1==1   return 1</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">print(yt_sum(4))</span><br><span class="line">print(yt_sum(100))</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 练习: 求斐波那契数列第n个数</span><br><span class="line"># 1, 1, 2, 3, 5, 8, 13....</span><br><span class="line">def sequence(n):</span><br><span class="line">    # 1.找临界值</span><br><span class="line">    if n == 1 or n == 2:</span><br><span class="line">        return 1</span><br><span class="line">    # 2. f(n)和f(n-1)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    f(n) = f(n-1)+f(n-2)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return sequence(n-1)+sequence(n-2)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(sequence(5))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">4.循环能做的事情不能使用递归做！（先开辟空间，然后会掉，占内存，消耗cpu）</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">sum1 = 0</span><br><span class="line">for x in range(10001):</span><br><span class="line">    sum1 += x</span><br><span class="line">print(sum1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def yt_sum(n):</span><br><span class="line">    if n == 1:</span><br><span class="line">        return 1</span><br><span class="line">    return yt_sum(n-1)+n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(yt_sum(100))</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-158bcfe92991f278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

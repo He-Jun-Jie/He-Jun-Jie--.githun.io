@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>python中声明函数其实就是声明一个类型是function的变量, 函数名就是变量名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">str1 = &apos;abc&apos;</span><br><span class="line">list1 = [1, 34, &apos;ahjs&apos;]</span><br><span class="line">dict1 = &#123;&apos;a&apos;: 10, &apos;b&apos;: 100&#125;</span><br><span class="line">func1 = lambda x: x</span><br><span class="line">def func2():</span><br><span class="line">    print(&apos;asbc&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(type(dict1), id(dict1))</span><br><span class="line">print(type(func1), id(func1))</span><br><span class="line">print(type(func2), id(func2))</span><br><span class="line">print(dict1)</span><br><span class="line">print(func1, func2)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>函数名  –  类型是function的变量<br>函数名() – 调用函数并且获取函数的返回值<br>普通变量能做的事情函数变量都能做!<br>####- 1.给别的变量赋值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- 声明了一个列表变量list1</span><br><span class="line">list1 = [1, 2, 3]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-  声明一个函数变量func1</span><br><span class="line">def func1():</span><br><span class="line">    print(&apos;我是一个函数!&apos;)</span><br><span class="line">    return 10</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-  使用列表变量给另外一个变量list2赋值,</span><br><span class="line">list2 = list1</span><br><span class="line"> 赋值后list2就可以当成列表来用</span><br><span class="line">print(list2[0])</span><br><span class="line">print(list2[::-1])</span><br><span class="line">list2.append(100)</span><br><span class="line">print(list2)</span><br><span class="line"></span><br><span class="line">-  使用函数变量给另外一个变量func2赋值</span><br><span class="line">func2 = func1</span><br><span class="line"> 赋值后func2就可以当成函数来使用</span><br><span class="line">func2()</span><br><span class="line">print(func2())</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>####- 2.变量作为容器类数据的元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">nums = [a, 100, 1000]</span><br><span class="line">print(nums)</span><br><span class="line">print(nums[0] - 10)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func3(x):</span><br><span class="line">    print(&apos;abc&apos;, x)</span><br><span class="line">    return 10</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list2 = [func3, func3(10), 100]</span><br><span class="line">print(list2)</span><br><span class="line">print(list2[0](1))</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>3.变量作为函数的实参<br>函数1作为函数2的实参  – 函数2就是一个高阶函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func4(n: int):</span><br><span class="line">    print(n + n - 1)</span><br><span class="line"></span><br><span class="line">func4(a)</span><br><span class="line">func4(10)</span><br><span class="line"></span><br><span class="line">def func5(x):</span><br><span class="line">    print(x)</span><br><span class="line">    x(111)</span><br><span class="line"></span><br><span class="line">func5(func4)</span><br><span class="line">func5(lambda x: x*2)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>####- 函数作为参数的应用: sort函数</p>
+<p>列表.sort(key=None, reverse=False)<br>参数key - 要求是一个带有一个参数，并且返回值是布尔的函数。这儿的参数指向的是列表中元素。<br>         确定按照元素的什么值进行排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1, 23, 9, 90]</span><br><span class="line">list1.sort(reverse=True)</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">all_student = [</span><br><span class="line">    &#123;&apos;name&apos;: &apos;张三&apos;, &apos;age&apos;: 19, &apos;score&apos;: 90&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;stu1&apos;, &apos;age&apos;: 30, &apos;score&apos;: 79&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;xiaoming&apos;, &apos;age&apos;: 12, &apos;score&apos;: 87&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;stu22&apos;, &apos;age&apos;: 29, &apos;score&apos;: 99&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 这儿的item是需要排序的列表的元素</span><br><span class="line"># def func(item):</span><br><span class="line">#     return item[&apos;score&apos;]</span><br><span class="line"># all_student.sort(key=func, reverse=True)</span><br><span class="line">all_student.sort(key=lambda item: item[&apos;score&apos;])   # 按成绩从小到大排序</span><br><span class="line">all_student.sort(key=lambda item: item[&apos;age&apos;], reverse=True)   # 按年龄从大到小排序</span><br><span class="line">print(all_student)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tuple1 = (</span><br><span class="line">    (10, 20),</span><br><span class="line">    (5, 80),</span><br><span class="line">    (30, 90)</span><br><span class="line">)</span><br><span class="line">new_tuple = sorted(tuple1, key=lambda item: sum(item))</span><br><span class="line">print(new_tuple)</span><br><span class="line"></span><br><span class="line">print(&apos;=============&apos;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="练习-按学生的平均分排序"><a href="#练习-按学生的平均分排序" class="headerlink" title="练习: 按学生的平均分排序"></a>练习: 按学生的平均分排序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">all_student = [</span><br><span class="line">    &#123;&apos;name&apos;: &apos;张三&apos;, &apos;age&apos;: 19, &apos;score&apos;: &#123;&apos;c&apos;: 78, &apos;m&apos;: 90, &apos;e&apos;: 40&#125;&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;stu1&apos;, &apos;age&apos;: 30, &apos;score&apos;: &#123;&apos;c&apos;: 89, &apos;m&apos;: 60, &apos;e&apos;: 98&#125;&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;xiaoming&apos;, &apos;age&apos;: 12, &apos;score&apos;: &#123;&apos;c&apos;: 78, &apos;m&apos;: 67, &apos;e&apos;: 86&#125;&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;stu22&apos;, &apos;age&apos;: 29, &apos;score&apos;: &#123;&apos;c&apos;: 34, &apos;m&apos;: 99, &apos;e&apos;: 50&#125;&#125;</span><br><span class="line">]</span><br><span class="line">def average(student):</span><br><span class="line">    scores = student[&apos;score&apos;]</span><br><span class="line">    sum1 = 0</span><br><span class="line">    for key in scores:</span><br><span class="line">        sum1 += scores[key]</span><br><span class="line">    return sum1/3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">all_student.sort(key=average)</span><br><span class="line">print(&apos;~~~~~~~~~~~&apos;)</span><br><span class="line">print(all_student)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#  =============排序原理(了解)=============</span><br><span class="line">def yt_sorted(iterable, key=None, reverse=False):</span><br><span class="line">    list1 = list(iterable)</span><br><span class="line">    if key:</span><br><span class="line">        for x in range(len(iterable) - 1):</span><br><span class="line">            for y in range(x + 1, len(iterable)):</span><br><span class="line">                item1 = list1[x]</span><br><span class="line">                item2 = list1[y]</span><br><span class="line">                if key(item1) &gt; key(item2):</span><br><span class="line">                    list1[x], list1[y] = list1[y], list1[x]</span><br><span class="line">    else:</span><br><span class="line">        # 快速排序</span><br><span class="line">        for x in range(len(iterable) - 1):</span><br><span class="line">            for y in range(x + 1, len(iterable)):</span><br><span class="line">                if list1[y] &lt; list1[x]:</span><br><span class="line">                    list1[x], list1[y] = list1[y], list1[x]</span><br><span class="line">    if not reverse:</span><br><span class="line">        # 从小到大</span><br><span class="line">        return list1</span><br><span class="line"></span><br><span class="line">    else:</span><br><span class="line">        # 从大到小</span><br><span class="line">        return list1[::-1]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(yt_sorted([1, 20, 9, 10]))</span><br><span class="line"># print(sorted(all_student, key=lambda x: x[&apos;age&apos;]))</span><br><span class="line">print(yt_sorted(all_student, key=lambda x: x[&apos;age&apos;], reverse=True))</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

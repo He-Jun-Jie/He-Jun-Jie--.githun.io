@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">1.容器类型：字符串（str），列表（list），元祖（tuple），字典（dict），集合（set）</span><br><span class="line">str:不可变，有序</span><br><span class="line">list：可变，有序</span><br><span class="line">tuple：不可变，有序</span><br><span class="line">dict：可变，无序</span><br><span class="line">set：可变，无序</span><br><span class="line"></span><br><span class="line">3.值</span><br><span class="line">str：&quot;hsj爱仕达&quot;，&apos;\nas\tasd\&apos;dsf\&quot;saf\\&apos; ,  \u      后面必须是四位十六进制数</span><br><span class="line">    python中的字符串，可以是单引号，双引号，或者三个双引号 三个单引号</span><br><span class="line"></span><br><span class="line">list：用[]括起来，里面有多个元素，元素可以是任何类型的数据，内型可以不一致。元素可以重复，但是不可以是赋值语句</span><br><span class="line">tiple：（元素1，元素2.。。），元素可以是任何类型数据，类型可以不一致，元素可以重复</span><br><span class="line">dict： 使用&#123;key1：value1， key2: value2....&#125;括起来里面必须是键值对,key 不可变，且唯一，值可以是任何数据，可以重复</span><br><span class="line">set：&#123;元素1，元素2.。。。&#125;，元素不可变，且唯一</span><br><span class="line"></span><br><span class="line">4.</span><br><span class="line">增:</span><br><span class="line">list:列表.append(元素)。列表.insert(下标，元素)</span><br><span class="line">dict：字典[key] = 值(有就改，没有就添加)    字典.setdefault(key,值) （没有就添加，有就pass）</span><br><span class="line">set：集合.add(元素)</span><br><span class="line">5.删:</span><br><span class="line">list：del 列表[下标]   列表.pop()/列表.pop（下标） 列表.remove(元素)</span><br><span class="line">dict：def 字典[key]  字典.pop（key）</span><br><span class="line">set：集合.remove（元素）</span><br><span class="line">6.改</span><br><span class="line">list:列表[下标] = 新值</span><br><span class="line">dict:字典[key]  =新值</span><br><span class="line"></span><br><span class="line">7.查</span><br><span class="line">str：查单个[下标]，切片，遍历</span><br><span class="line">list：查单个[下标]，切片，遍历</span><br><span class="line">tuple：查单个[下标]，切片，遍历</span><br><span class="line">dict：查单个[key]，遍历[遍历拿到key]</span><br><span class="line">set：只能遍历（遍历去元素，没有下标）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">8.使用:</span><br><span class="line">str：单独文字数据使用字符串（除了数字和布尔表示的其他数据）</span><br><span class="line">list：保存多个具有相同意义的数据</span><br><span class="line">tuple：多个数据的值或者顺序不能变的时候使用元祖（除了一些特殊意义的值，类似星期，一般不会选择用元祖来作为容器）</span><br><span class="line">dict：保存多个数据，需要区分，就用字典</span><br><span class="line">set：对其他容器中的数据去重，或者做数学集合运算</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

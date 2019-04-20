@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>import re</p>
+<p>def main():<br>    “”””””</p>
+<pre><code># 1 *(匹配0次或多次)
+&quot;&quot;&quot;
+字符 *  - 指定的字符出现0次或者多次(这儿的字符可以是正则符号，也可以是普通字符)
+
+a* - a出现0次或者多次
+\d* - 任意数字出现0次或者多次
+[a-z]* - 任意小写字母出现0次或多次
+&quot;&quot;&quot;
+# 123前面有0个或者多个字符，并且每个字符都是a
+re_str = r&apos;a*123&apos;
+print(re.fullmatch(re_str, &apos;aaa123&apos;))
+print(re.fullmatch(re_str, &apos;123&apos;))
+
+# 123前面有0个或者多个字符，并且每个字符都是数字字符
+re_str = r&apos;\d*123&apos;
+print(re.fullmatch(re_str, &apos;12123&apos;))
+print(re.fullmatch(re_str, &apos;123&apos;))
+
+re_str = r&apos;[a-z]*123&apos;
+print(re.fullmatch(re_str, &apos;huagh123&apos;))
+print(re.fullmatch(re_str, &apos;123&apos;))
+
+# 2 +(匹配1次或多次)
+re_str = r&apos;a+123&apos;
+print(re.fullmatch(re_str, &apos;aaa123&apos;))
+print(re.fullmatch(re_str, &apos;a123&apos;))
+
+# 3 ?(匹配0次或者1次)
+re_str = r&apos;\+?abc&apos;
+print(re.fullmatch(re_str, &apos;+abc&apos;))
+
+# 练习：写一个正则表达式能够匹配所有的整数字符串
+&quot;&quot;&quot;
+1233
++233
+-384
+00233 不是整数
+&quot;&quot;&quot;
+re_str = r&apos;[+-]?[1-9]\d*&apos;
+print(re.fullmatch(re_str, &apos;389&apos;))
+
+# 4 {}
+&quot;&quot;&quot;
+{M,N} - 匹配M到N次(最少M次，最多N次)
+{M,}  - 匹配至少M次
+{,N}  - 匹配最多N次
+{N}   - 匹配N次
+&quot;&quot;&quot;
+print(re.fullmatch(r&apos;a{2,5}&apos;, &apos;aaaaa&apos;))
+print(re.fullmatch(r&apos;a{2,}&apos;, &apos;aaa&apos;))
+print(re.fullmatch(r&apos;a{,3}&apos;, &apos;aa&apos;))
+print(re.fullmatch(r&apos;a{4}&apos;, &apos;aaaa&apos;))
+
+# 密码：6~16位，只能包含数字和字母
+print(re.fullmatch(r&apos;[a-zA-Z\d]{6,16}&apos;, &apos;3u2222&apos;))
+</code></pre>
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

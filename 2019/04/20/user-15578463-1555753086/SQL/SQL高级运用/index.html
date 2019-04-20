@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>– =================================sql基础补充===============================<br>– 1.条件语句的写法<br>– 在SQL中可以通过 <code>where 条件语句</code>来对操作对象进行筛选 - 筛选<br>– a. 比较运算符： =, &lt;&gt;, &gt;, &lt;, &gt;=, &lt;=<br>– 注意: 判断一个字段的值是否为空不用使用=和&lt;&gt;, 而是使用<code>is null</code> 和 <code>is not null</code><br>SELECT addr FROM t_student;<br>SELECT stuname FROM t_student WHERE addr is NULL;     – 判断是否为NULL（空）<br>SELECT stuname FROM t_student WHERE addr=’’;     – 判断是否是空串<br>– b. 逻辑运算符: and, or, not<br>– c. where 字段名  between 值1 and 值2   –  筛选指定的字段的值在值1和值2之间<br>SELECT stuname,birth FROM t_student WHERE birth BETWEEN ‘1990-1-1’ AND ‘1999-12-31’;<br>– d. where 字段名 in 集合   – 筛选出字段值是集合中的元素;(集合是使用括号括起来里面多个值)<br>SELECT * FROM t_student WHERE stuname in (‘小花’, ‘小明’, ‘路飞’);<br>– e. like操作 </p>
+<p>– 2.数据类型<br>– varchar(size): 不定长字符串，size决定的是最大长度<br>– char(size): 定长字符<br>– text: 不限长度(最大是255个字符)<br>– int/tinyint(-128~127)<br>– FLOAT(size,d)/DOUBLE(size,d)  - 这儿的size和d的值都有约束效果<br>– bit: 只有0和1两个值<br>– date/datetime/time: 值可以是时间函数的结果，也可以时间字符串；计算或者是比较的时候内部是按时间处理的<br>UPDATE t_student SET tel=’1367819230’;<br>ALTER TABLE t_student ADD COLUMN intro VARCHAR(10);<br>SELECT * FROM t_student;  </p>
+<p>– 3.去重<br>SELECT DISTINCT addr FROM t_student;  </p>
+<p>– ========================添加约束=========================<br>– 1.创建表的时候添加约束<br>CREATE TABLE if not EXISTS t_college<br>(<br>collid int,<br>collname VARCHAR(20) NOT NULL,   – 创建表的时候添加约束<br>website VARCHAR(1024),<br>intro VARCHAR(200),<br>PRIMARY KEY(collid)<br>);</p>
+<p>– 2.通过添加约束索引的方式添加约束<br>– a.添加约束<br>– alter table 表名 add constraint 索引名 约束 (字段名);<br>– 说明: 索引名 - 自己随便命名，用来指向当前添加的约束； 约束 - 需要添加的约束(支持唯一约束、主键约束和外键约束)</p>
+<p>ALTER TABLE t_college ADD CONSTRAINT con_website UNIQUE (website);<br>– 给t_college表中的website添加unique约束，约束索引为con_website</p>
+<p>– b.删除约束<br>– alter table 表名 drop index 约束索引;<br>ALTER TABLE t_college DROP index con_website;</p>
+<p>– ====================外键和E.R图================<br>– 1.什么是外键：表中的某个字段的值是根据其他表中主键的值来确定的。那么这个字段就是外键<br>– 1.1 多对一的外键的添加： 将外键添加到多的一方对应的表中<br>–     一对一的外键的添加： 将外键随便添加到哪一方，同时添加值唯一约束<br>–     多对多的外键的添加： 关系型数据库中，两张表没法实现多多的关系，需要一个中间表。(中间表有两个外键分别参照多多的两个表的主键)<br>– 1.2 怎么添加外键： </p>
+<p>– a.添加外键对应的字段<br>alter TABLE tb_student add COLUMN collid int;</p>
+<p>– b.给设计好的外键对应的字段添加外键约束<br>– alter table 表1 add constraint 索引名 foreign key (字段1) references 表2 (字段2);<br>–   - 将表1中的字段1设置为外键，并且让这个外键的值参照表2中的字段2<br>ALTER TABLE tb_student ADD CONSTRAINT fk_collid_stu<br>FOREIGN KEY (collid)<br>REFERENCES  tb_college (collid);</p>
+<p>– c. 删除外键约束<br>– alter table 表名 drop foreign key 外键索引名;    - 可以删除外键约束，但是外键索引还存在；需要额外的把索引删掉<br>– 注意: 删除外键约束的时候直接删除约束的索引无效，必须先将约束删掉，然后再删除索引.<br>ALTER TABLE tb_student DROP FOREIGN KEY fk_collid_stu;<br>ALTER TABLE tb_student DROP INDEX fk_collid_stu; </p>
+<p>– d. 多对多的外键约束<br>– 添加学生的外键约束<br>ALTER TABLE tb_score ADD CONSTRAINT fk_stuid_score<br>FOREIGN KEY (stuid)<br>REFERENCES tb_student (stuid);</p>
+<p>– 添加课程的外键约束<br>ALTER TABLE tb_score ADD CONSTRAINT fk_couid_score<br>FOREIGN KEY (couid)<br>REFERENCES tb_course (couid);</p>
+<p>– ==================查询的高级操作=================<br>– 1.聚合：max()/min()/sum()/avg()/count()<br>– SELECT 聚合函数(字段) FROM 表名 WHERE 条件;   – 按条件多表查询指定字段数据，然后将查询结果做相应的聚合运算。聚合运算的结果是最后结果<br>SELECT mark FROM tb_score;    – 获取tb_score表中的所有分数值<br>SELECT max(mark) as maxmark FROM tb_score;      – 获取tb_score表中所有分数的最大值<br>SELECT min(mark) FROM tb_score;<br>SELECT sum(mark) FROM tb_score;<br>SELECT avg(mark) FROM tb_score WHERE scoreid&gt;=123;   – 计算平均值的时候如果参与运算的对象的值为NULL,那么这个数据不会参与计算<br>SELECT count(mark) FROM tb_score WHERE mark&gt;=90;</p>
+<p>– 2.分组<br>– SELECT 字段操作  FROM 表名 WHERE 条件 GROUP BY(字段2);<br>–         将指定表中满足条件的记录按照字段2的进行分组(值是一样的在一个组里面), 然后再讲每个分组作为整体按照指定字段进行指定聚合操作<br>– 求每个学生的平均成绩<br>SELECT stuid,avg(mark) FROM tb_score WHERE scoreid &lt;= 115 GROUP BY(stuid) ;<br>– 注意:a.字段操作的位置除了分组字段不用聚合，其他字段都必须聚合   b.分组的时候where要放到分组前对需要分组的数据进行筛选</p>
+<p>– having: 分组的时候，在分组后用having代替where来对分组后的数据进行筛选<br>– 获取平均分数大于60分的学生的id<br>SELECT stuid,avg(mark) FROM tb_score GROUP BY(stuid) HAVING avg(mark)&gt;60;</p>
+<p>– 3.子查询: 将一个查询操作的结果作为另外一个查询的数据源<br>– 在tb_score表中获取成绩是大于90分的学生的id<br>SELECT stuid FROM tb_score WHERE mark&gt;90 and stuid is not NULL;   </p>
+<p>– 获取成绩大于90分的学生的名字<br>SELECT stuname FROM tb_student WHERE stuid in<br>(SELECT stuid FROM tb_score WHERE mark&gt;90 and stuid is not NULL);  </p>
+<p>SELECT stuid,mark FROM tb_score WHERE mark &gt; 90 and stuid is  not NULL;<br>– 将一个查询的结果作为查询对象提供给另外一个查询。但是第一个查询结果需要重命名<br>SELECT mark FROM (SELECT stuid,mark FROM tb_score WHERE mark &gt; 90 and stuid is  not NULL) as t2;</p>
+<p>– =============1.学生表===============<br>CREATE TABLE IF NOT EXISTS tb_student<br>(<br>stuid int not NULL auto_increment,<br>stuname VARCHAR(20) not NULL,<br>tel CHAR(11) not NULL,<br>birth date DEFAULT ‘2019-10-21’,<br>addr VARCHAR(100),<br>PRIMARY key(stuid)<br>);</p>
+<p>– 添加学院的外键约束<br>ALTER TABLE tb_student ADD CONSTRAINT fk_collid_stu<br>FOREIGN KEY (collid)<br>REFERENCES  tb_college (collid);</p>
+<p>INSERT INTO tb_student (stuname, addr) VALUES<br>(‘王大锤’, ‘北京’),<br>(‘张怀义’, ‘江西’),<br>(‘张楚楠’, ‘四川’),<br>(‘罗玉凤’, ‘重庆’),<br>(‘王祖贤’, ‘香港’),<br>(‘刘德华’, ‘香港’),<br>(‘周杰伦’, ‘台湾’);</p>
+<p>– ===============2.课程表================<br>CREATE TABLE IF NOT EXISTS tb_course<br>(<br>couid int NOT NULL auto_increment,<br>couname VARCHAR(20) NOT NULL,<br>startdate date NOT NULL DEFAULT ‘2019-10-21’,<br>intro VARCHAR(200),<br>credit int NOT NULL,<br>PRIMARY key(couid)<br>);  </p>
+<p>– 添加老师的外键约束<br>ALTER TABLE tb_course ADD COLUMN teaid int COMMENT ‘老师外键字段’;<br>ALTER TABLE tb_course ADD CONSTRAINT fk_teaid_course<br>FOREIGN KEY (teaid)<br>REFERENCES tb_teacher (teaid);    </p>
+<p>– =================3.学院表====================<br>CREATE TABLE IF NOT EXISTS tb_college<br>(<br>collid int auto_increment,<br>website VARCHAR(200) UNIQUE,<br>collname VARCHAR(50),<br>PRIMARY KEY(collid)<br>); </p>
+<p>– =================4.老师表====================<br>CREATE TABLE IF NOT EXISTS tb_teacher<br>(<br>teaid int NOT NULL auto_increment,<br>teaname VARCHAR(20) NOT NULL,<br>teaage INT,<br>tel char(11),<br>PRIMARY KEY(teaid)<br>);</p>
+<p>– 添加学院的外键约束<br>ALTER TABLE tb_teacher ADD COLUMN collid int COMMENT ‘学院的外键’;<br>ALTER TABLE tb_teacher ADD CONSTRAINT fk_collid_teacher<br>FOREIGN KEY (collid)<br>REFERENCES tb_college (collid);</p>
+<p>– ================分数表===================<br>CREATE TABLE if NOT EXISTS tb_score<br>(<br>scoreid int NOT NULL auto_increment,<br>mark FLOAT(4,1) COMMENT ‘分数’,<br>stuid int COMMENT ‘学生外键’,<br>couid int COMMENT ‘课程外键’,<br>PRIMARY KEY (scoreid)<br>);</p>
+<p>INSERT INTO tb_score (mark) VALUES (89),(45.5),(100),(95),(60),(77),(90),<br>(97),(49),(66),(56),(71),(80.5),(33),(87),(56),(74),(68),(80),(92),(34),(75);</p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>#####1.什么是运算符重载<br>通过实现类中相应的魔法方法来让当前类的对象支持相应的运算符</p>
+<p>#####注意：python中所有的数据类型都是类; 所有的数据都是对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">class Student(object):</span><br><span class="line">    def __init__(self, name=&apos;&apos;, age=0, score=0):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.score = score</span><br><span class="line"></span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return &apos;&lt;&apos; + str(self.__dict__)[1:-1] + &apos;&gt;&apos;</span><br><span class="line"></span><br><span class="line">    # 实现&apos;+&apos;对应的魔法方法，让两个学生对象能够进行+操作</span><br><span class="line">    # self和other的关系： self+other    ==&gt; self._ _add_ _(other)</span><br><span class="line">    # 返回值就是运算结果</span><br><span class="line">    def __add__(self, other):</span><br><span class="line">        # a.支持Student+Student:</span><br><span class="line">        return self.age + other.age</span><br><span class="line">        # b.支持Student+数字</span><br><span class="line">        # return self.age + other</span><br><span class="line"></span><br><span class="line">    # self * other</span><br><span class="line">    # 将other当成数字</span><br><span class="line">    def __mul__(self, other):</span><br><span class="line">        return self.name * other</span><br><span class="line"></span><br><span class="line">    # self和other都是学生对象</span><br><span class="line">    # 注意：大于和小于运算符是需要重载一个就行</span><br><span class="line">    def __gt__(self, other):</span><br><span class="line">        return self.score &gt; other.score</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    stu1 = Student(&apos;小花&apos;, 18, 90)</span><br><span class="line">    stu2 = Student(&apos;夏明&apos;, 20, 78)</span><br><span class="line">    stu3 = Student(&apos;小红&apos;, 17, 99)</span><br><span class="line"></span><br><span class="line">    # 所有类的对象都支持&apos;==&apos;和&apos;!=&apos;运算</span><br><span class="line">    print(stu1 == stu2)</span><br><span class="line"></span><br><span class="line">    print(stu1 + stu2)     # print(stu1.__add__(stu2))</span><br><span class="line"></span><br><span class="line">    # print(stu1 &gt; stu2)</span><br><span class="line">    # print(stu1 &lt; stu2)</span><br><span class="line"></span><br><span class="line">    print(stu1 * 2)   # print(stu1.__mul__(2))</span><br><span class="line"></span><br><span class="line">    students = [stu1, stu2, stu3]</span><br><span class="line">    print(students)</span><br><span class="line">    students.sort()</span><br><span class="line">    print(students)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-4e6a6147deabfa7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

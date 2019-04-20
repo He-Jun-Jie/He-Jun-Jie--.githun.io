@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>####1.continue<br>continue是python关键字，只能用在循环体中！</p>
+<p>功能：执行循环体执行到continue的时候,结束当次循环，直接进入下次循环的判断。<br>     (for循环就是让变量去取下一个值; while循环就是直接去判断while后边的条件是否为True)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">for x in range(3):</span><br><span class="line">    print(&apos;===&apos;)</span><br><span class="line">    print(&apos;***&apos;)</span><br><span class="line">    if x == 2:</span><br><span class="line">        continue</span><br><span class="line">    print(&apos;123&apos;)</span><br><span class="line"></span><br><span class="line">x = 0</span><br><span class="line">while x &lt; 100:</span><br><span class="line">    x += 1</span><br><span class="line">    if x % 3 == 0:</span><br><span class="line">        continue</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-95de981cbeb77f6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>#####第二段代码就是1~100中除去3的倍数</p>
+<hr>
+<p>/<br>/</p>
+<p>###2.break </p>
+<ul>
+<li><p>break是python关键字，只能用在循环体中！ </p>
+</li>
+<li><p>功能: 执行循环体的时候，遇到break循环直接结束.直接执行循环后面的其他语句</p>
+</li>
+</ul>
+<h5 id="找到大于111的数字当中第一个能够能够被17整除的数"><a href="#找到大于111的数字当中第一个能够能够被17整除的数" class="headerlink" title="找到大于111的数字当中第一个能够能够被17整除的数"></a>找到大于111的数字当中第一个能够能够被17整除的数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;===============&apos;)</span><br><span class="line">num = 111</span><br><span class="line">while True:</span><br><span class="line">    if num % 17 == 0:</span><br><span class="line">        print(num)</span><br><span class="line">        break</span><br><span class="line">    num += 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for x in &apos;abc&apos;:</span><br><span class="line">    print(x)</span><br><span class="line">    break</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-1c261b691de13190.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打印结果"></p>
+<p>###3.else</p>
+<ul>
+<li>for 变量 in 序列:<br>(缩进)循环体</li>
+<li>else:<br>(缩进)代码段  </li>
+</ul>
+<ul>
+<li>while 条件语句:<br>(缩进)循环体</li>
+<li><p>else:<br>(缩进)代码段</p>
+</li>
+<li><p>执行过程: 循环执行过程不变, else后边代码段，如果循环是自然死亡就会执行；如果是因为遇到break而结束的，就不会执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for x in range(5):</span><br><span class="line">    print(x)</span><br><span class="line">    if x == 3:</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-b8ea3444e4cd8a00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打印结果"></p>
+<p>####else:</p>
+<h5 id="print-‘for循环自然死亡’-循环遇到break不会执行"><a href="#print-‘for循环自然死亡’-循环遇到break不会执行" class="headerlink" title="print(‘for循环自然死亡’)   # 循环遇到break不会执行"></a>print(‘for循环自然死亡’)   # 循环遇到break不会执行</h5><p>#####print(‘===========’)    # 不管循环怎么结束都会执行</p>
+<p>~~~<br>index = 0<br>while index &lt; 5:<br>    if index == 3:<br>        break<br>    index += 1<br>else:<br>    print(‘while自然死亡’)</p>
+<p>~~</p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

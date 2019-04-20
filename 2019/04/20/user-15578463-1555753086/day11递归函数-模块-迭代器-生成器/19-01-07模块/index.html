@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>###1.什么是模块<br>在python中一个py文件就是一个模块</p>
+<p>#####a.系统模块(标准库) - python系统提供的模块（安装解释器的时候已经导入到解释器中了,使用的时候在代码中直接导入）</p>
+<ul>
+<li>random模块 - 提供随机数</li>
+<li>math模块 - 提供数学运算</li>
+<li>json库 - 提供json数据相关操作</li>
+<li>re模块 - 提供正则表达式相关操作</li>
+<li>socket模块 - 提供python套接字编程</li>
+<li>time模块 - 提供和时间相关的操作</li>
+<li>threading模块 - 提供和线程相关的操作<br>…。。。。。</li>
+</ul>
+<p>#####b.自定义模块 - 程序员自己创建的py文件<br>自己写的模块<br>别人写的模块 - 第三方库 (需要先下载到解释器中，然后才能再代码中导入)</p>
+<p>标准库和第三库一般是通过模块提供变量、函数、类</p>
+<p>###2.怎么使用模块<br>import 模块名   - 在程序中直接导入指定的模块, 导入后可以使用模块中所有的全局变量(包含了变量、函数和类)<br>                 导入后通过”模块名.变量”来使用模块中的内容  </p>
+<p>from 模块名 import 变量1, 变量2  -  在程序中导入指定的模块，导入后只能使用import后面的变量<br>                                  导入后直接使用变量,不用在前面加’模块名.’</p>
+<p>from – 模块名 – import * - 在程序中直接导入指定的模块, 导入后可以使用模块中所有的全局变量(包含了变量、函数和类)<br>                      导入后直接使用变量,不用在前面加’模块名.’</p>
+<p>###3.导入模块的实质:</p>
+<ul>
+<li>a.不管是使用import还是from-import，导入模块的时候都会执行模块中所有的代码</li>
+<li>b.python中一个模块不会重复导入多次。因为导入的时候系统会自动检查当前模块是否已经导入</li>
+</ul>
+<p>###4.怎么阻止模块中的内容被其他模块执行<br>将不希望被其他模块执行的代码放在if语句中<br>如果希望被其他模块使用的代码就放在if语句的外码<br>(这儿的if语句指的是: if <strong>name</strong> == ‘<strong>main</strong>‘)</p>
+<p>原理：<br>每个模块都有一个<strong>name</strong>属性, 代表模块名。默认情况下它的值是py文件的文件名。<br>当当前模块正在被执行(直接执行)的时候,模块属性<strong>name</strong>的值就会变成’<strong>main</strong>‘<br>“””</p>
+<h3 id="1-系统模块"><a href="#1-系统模块" class="headerlink" title="1. 系统模块"></a>1. 系统模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line">print(random.randint(10, 100))</span><br><span class="line"></span><br><span class="line">print(&apos;=======import model1之前=======&apos;)</span><br><span class="line">import model1</span><br><span class="line">import model1</span><br><span class="line">print(&apos;=======import model1之后=======&apos;)</span><br><span class="line">model1.a = 1000</span><br><span class="line">print(model1.a)</span><br><span class="line">print(model1.fun1())</span><br><span class="line"></span><br><span class="line"># print(&apos;=========from model2 import之前=========&apos;)</span><br><span class="line"># from model2 import aa, x</span><br><span class="line"># print(&apos;=========from model2 import之后=========&apos;)</span><br><span class="line"># print(&apos;aa:&apos;, aa)</span><br><span class="line"># print(x)</span><br><span class="line"># # print(model2.func2())   # 不能是用model2中除了aa和x的内容</span><br><span class="line"></span><br><span class="line">aa = &apos;hello&apos;</span><br><span class="line">from model2 import *</span><br><span class="line"># 导入model2，并且可以直接使用里面所有的全局变量</span><br><span class="line">print(&apos;aa:&apos;, aa)</span><br><span class="line">print(x)</span><br><span class="line">func2()</span><br><span class="line"></span><br><span class="line">print(&apos;==============import model3================&apos;)</span><br><span class="line">import model3</span><br><span class="line"></span><br><span class="line"># print(model3.a)</span><br><span class="line"># print(model3.b)</span><br></pre></td></tr></table></figure>
+<p>“””<br>5.重命名 - 导入模块的时候可以对模块或者模块中的内容重新命名<br>import 模块名 as 新模块名<br>from 模块名 import 变量名1 as 新变量名1, 变量名2, 变量名3 as 新变量名3<br>“””<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># import model4 as newMode</span><br><span class="line"># print(newMode.age)</span><br><span class="line"></span><br><span class="line">import threading as TD</span><br><span class="line">name = 100</span><br><span class="line"></span><br><span class="line">from model4 import name as yt_name, age as yt_age</span><br><span class="line"></span><br><span class="line">print(name)</span><br><span class="line">print(yt_name)</span><br><span class="line">print(yt_age)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-51e910ffc5e65e58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-9a73f5c3eba69104.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-de00388e361fdae4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="此章节多个模块配合使用的"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

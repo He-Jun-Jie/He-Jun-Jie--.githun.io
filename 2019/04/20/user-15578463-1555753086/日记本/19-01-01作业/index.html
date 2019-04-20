@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </div>
+    </div>
+    <div class="article-content">
+        <!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19-01-01作业</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">19-01-01作业</h1>
+        <div class="show-content">
+          <p>### 列表基础﻿<br></p><p>﻿</p><p>1.已知一个列表，求列表中心元素。﻿</p><p>list=[1,2,3,4,5,6,9s,d,f,f,d,g]﻿</p><p>print(list[len(list)//2])﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>2.已知一个列表，求所有元素和。﻿</p><p>list2=[9,3,1,4,8,2,2,4]﻿</p><p>a = 0﻿</p><p>for n in list2: ﻿</p><p>    a += n﻿﻿<br></p><p>3.已知一个列表，输出所有奇数下标元素。   ﻿﻿<br></p><p>list3=[5,9,7,1,3,6,4,6,5]﻿</p><p>for m in range(len(list3)):﻿</p><p>    if m//2:﻿</p><p>        print(list3[m])﻿﻿<br></p><p>﻿</p><p>4.已知一个列表，输出所有元素中，值为奇数的。﻿</p><p>list3=[5,9,7,1,3,6,4,6,5]﻿</p><p>for m in list3:﻿</p><p>    if m//2:﻿</p><p>        prinf(m)﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>   ﻿</p><p>5.已知一个列表，将所有元素乘二。﻿</p><p>list4 = [1,2,3,4,5,6,7,8,9]﻿</p><p>for h in list4:﻿</p><p>    print(h*2)﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p> ﻿</p><p>6.有一个长度是10的列表，数组内有10个人名，要求去掉重复的  ﻿</p><p>例如:names = ['张三', '李四', ' 大黄', '张三'] -&gt; names = ['张三', '李四', '大黄'] ﻿</p><p> names=['李浩','张扬','士豪','润恒','之向','阿源','之向','兰芝','奕汇', '士豪']﻿</p><p>names.del(5)</p><p>names.remove(士豪)</p><p><br></p><p><br></p><p> ﻿﻿<br></p><p>﻿</p><p>﻿</p><p>7.已经一个数字列表(数字大小在0~65535之间), 将列表转换成数字对应的字符列表  ﻿</p><p>例如: list1 =  [97, 98, 99]  -&gt; list1 = ['a', 'b', 'c'] ﻿﻿<br></p><p>﻿list1 = ［36,37,38,39］</p><p>﻿ </p><p> ﻿﻿<br></p><p>﻿</p><p>﻿</p><p>8.用一个列表来保存一个节目的所有分数，求平均分数(去掉一个最高分，去掉一个最低分，求最后得 分) ﻿</p><p> ﻿﻿list2 = ［86,89,92,95,93,81,］<br></p><p>num=0</p><p>for n in list2：</p><p>    num+=n</p><p>print(num/len(list2))</p><p>names.del(95)</p><p>names.remove(81)</p><p>    </p><p>﻿</p><p>﻿</p><p>﻿</p><p>9.有另个列表A和B，使用列表C来获取两个列表中公共的元素  ﻿</p><p>例如: A = [1, 'a', 4, 90]  B =  ['a', 8, 'j', 1] --&gt; C = [1, 'a']    ﻿﻿<br></p><p><br></p><p><br></p><p>### 周末﻿</p><p>1.控制台输入年龄，根据年龄输出不同的提示(例如: 老年人，青壮年，成年人，未成年，儿童)﻿﻿<br></p><p>﻿age = int(input('请输入'))</p><p>if age&lt;10：</p><p>    print('儿童')</p><p>elif age &lt; 18：</p><p>    print('未成年')</p><p>elif age &lt; 30：</p><p>    print('成年人')</p><p>elif age &lt; 50</p><p>    print('青壮年')</p><p>else age &lt; 60</p><p>    print('老年人')</p><p>﻿</p><p>2.计算5的阶乘 5!的结果是﻿﻿<br></p><p>3.求1+2!+3!+...+20!的和 1.程序分析：此程序只是把累加变成了累乘。﻿﻿<br></p><p>4. 计算 1+1/2!+1/3!+1/4!+...1/20!=?﻿﻿<br></p><p>5.循环输入大于0的数字进行累加，直到输入的数字为0，就结束循 环，并最后输出累加的结果。﻿﻿<br></p><p>6.求s=a+aa+aaa+aaaa+aa...a的值，其中a是一个数字。例如 2+22+222+2222+22222(此时共有5个数相加)，几个数相加有键盘控制。 1.程序分析：关键是计算出每一 项的值。﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>7.输入三个整数x,y,z，请把这三个数由小到大输出。﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>8.控制台输出三角形﻿﻿<br></p><p>a.根据n的值的不同，输出相应的形状  ﻿﻿<br></p><p>```﻿﻿<br></p><p>	n = 5时             n = 4   ﻿</p><p>	*****               ****  ﻿</p><p>	****                ***  ﻿</p><p>	***                  **﻿</p><p>	**                  *﻿</p><p>	*﻿</p><p>```﻿</p><p> ﻿</p><p>b.根据n的值的不同，输出相应的形状(n为奇数)  ﻿﻿<br></p><p>```﻿</p><p>	n =  5               n = 7﻿</p><p>	  *                    *﻿</p><p>	 ***                  ***﻿</p><p>	 *****                *****﻿</p><p>	                    *******﻿</p><p>```﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>9.输出9*9口诀。﻿</p><p>1.程序分析：分行与列考虑，共9行9列，i控制行，j控制列。﻿</p><p>![](https://timgsa.baidu.com/timg? image&amp;quality=80&amp;size=b9999_10000&amp;sec=1535104644557&amp;di=e7a2fd3ec3ae442712a36b66650ef1b8&amp;img type=0&amp;src=http%3A%2F%2Fwww.edowning.net%2Fpic%2F20160409143216.jpg)  ﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>10.这是经典的"百马百担"问题，有一百匹马，驮一百担货，大马驮3担，中马驮2担，两只小马驮1担， 问有大，中，小马各几匹？﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>11.我国古代数学家张邱建在《算经》中出了一道“百钱买百鸡”的问题，题意是这样的： 5文钱可以买 一只公鸡，3文钱可以买一只母鸡，1文钱可以买3只雏鸡。现在用100文钱买100只鸡，那么各有公鸡、母 鸡、雏鸡多少只？请编写程序实现。﻿﻿<br></p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>﻿</p><p>12.小明单位发了100元的购物卡，小明到超市买三类洗化用品，洗发水（15元），香皂（2元），牙刷（ 5元）。要把100元整好花掉，可如有哪些购买结合？﻿﻿<br></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

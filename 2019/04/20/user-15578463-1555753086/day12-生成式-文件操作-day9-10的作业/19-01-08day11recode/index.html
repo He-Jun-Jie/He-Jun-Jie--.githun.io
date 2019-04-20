@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <ul>
+<li>1.递归函数(了解)<br>a.找临界值<br>b.找关系(f(n)和f(n-1))<br>c.用f(n-1)实现f(n)</li>
+</ul>
+<p>能用循环就不使用递归，因为递归性能低(消耗大量内存和cpu资源)</p>
+<ul>
+<li><p>2.模块<br>模块就是py文件</p>
+</li>
+<li><p>import 模块<br>from 模块 import 内容</p>
+</li>
+<li><p>import 模块  as ..<br>from 模块 import 内容 as …</p>
+</li>
+</ul>
+<ul>
+<li><p>3.迭代器和生成器<br>iter - 将其他序列转换成迭代器; 生成器<br>元素 - next(), for-in</p>
+</li>
+<li><p>生成器: 调用带有一个带有yield关键字的函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    # 写在这儿的代码不会被执行和导入</span><br><span class="line">    pass</span><br><span class="line">import model1</span><br><span class="line"># import ytTime.time1</span><br><span class="line"># print(ytTime.time1.t1)</span><br><span class="line">#</span><br><span class="line"># import ytTime.time2 as time2</span><br><span class="line"># print(time2.t2)</span><br><span class="line"></span><br><span class="line"># from ytTime import time1, time2</span><br><span class="line"># print(time1.t1, time2.t2)</span><br><span class="line"></span><br><span class="line"># from ytTime.time1 import t1</span><br><span class="line"># print(t1)</span><br><span class="line"></span><br><span class="line">def func1():</span><br><span class="line">    for x in range(10):</span><br><span class="line">        yield x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(next(func1()))</span><br><span class="line">print(next(func1()))</span><br><span class="line"></span><br><span class="line">gen = func1()</span><br><span class="line">print(next(gen))</span><br><span class="line">print(next(gen))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-60c38567aeda27fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

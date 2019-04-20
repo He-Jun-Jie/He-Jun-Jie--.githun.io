@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </div>
+    </div>
+    <div class="article-content">
+        <!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day8元祖，字典，集合</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">day8元祖，字典，集合</h1>
+        <div class="show-content">
+          <p>使用一个变量all_students保存一个班的学生信息(4个)，每个学生需要保存：姓名、年龄、成绩、电话﻿<br></p><p>﻿</p><p>```﻿</p><p>all_students = [﻿</p><p>	{'name':'stu1', 'age': 19, 'score':81, 'tel':'192222'},﻿</p><p>	{'name':'stu2', 'age': 29, 'score':90, 'tel':'211222'},﻿</p><p>	{'name':'stu3', 'age': 12, 'score':67, 'tel':'521114'},﻿</p><p>	{'name':'stu4', 'age': 30, 'score':45, 'tel':'900012'},﻿</p><p>]﻿﻿<br></p><p>﻿</p><p>﻿</p><p>```﻿﻿<br></p><p>1.添加学生：输入学生信息，将输入的学生的信息保存到all_students中﻿﻿<br></p><p>```﻿</p><p>例如输入：﻿</p><p>姓名: 小明﻿</p><p>年龄: 20﻿</p><p>成绩: 100﻿</p><p>电话: 111922﻿</p><p>all_students = [﻿</p><p>	{'name':'stu1', 'age': 19, 'score':81, 'tel':'192222'},﻿</p><p>	{'name':'stu2', 'age': 29, 'score':90, 'tel':'211222'},﻿</p><p>	{'name':'stu3', 'age': 12, 'score':67, 'tel':'521114'},﻿</p><p>	{'name':'stu4', 'age': 30, 'score':45, 'tel':'900012'},﻿</p><p>]﻿</p><p>name1=input('请输入姓名')﻿</p><p>ages1=input('请输入年龄')﻿</p><p>score1=input('请输入成绩')﻿</p><p>tel1=input('请输入电话')﻿</p><p>all_students.append({'name':name1, 'age': int(ages1), 'score': int(score1), 'tel':int(tel1)})﻿﻿<br></p><p>那么就在all_students中添加{'name':'小张', 'age': 21, 'score': 95, 'tel':'119222'}﻿</p><p>```﻿﻿<br></p><p>﻿</p><p>2.按姓名查看学生信息：﻿﻿<br></p><p>```﻿</p><p>例如输入:﻿</p><p>姓名: stu1 就打印：'name':'stu1', 'age': 20, 'score':91, 'tel':'192322'﻿</p><p>```﻿</p><p><br></p><p>    num1=input('请输入')</p><p>    if num1='stu1'</p><p>        print(all_students[0])</p><p>    elif num1='stu2'</p><p>        print(all_students[1])</p><p>    elif num1='stu3'</p><p>        print(all_students[2])</p><p>    elif num1='stu4'</p><p>        print(all_students[3])</p><p>    elif num1='小张'</p><p>        print(all_students[4])﻿﻿</p><p>```</p><p><br></p><p>3.求所有学生的平均成绩和平均年龄﻿﻿<br></p><p>4.删除班级中年龄小于18岁的学生﻿﻿<br></p><p>5.统计班级中不及格的学生的人数﻿﻿<br></p><p>6.打印手机号最后一位是2的学生的姓名</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

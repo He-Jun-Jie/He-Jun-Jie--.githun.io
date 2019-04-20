@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>####内存管理</p>
+<p>######1.数据的存储</p>
+<ul>
+<li>内存分为栈区间和堆区间；从底层来看，栈区间的内存的开辟和释放是系统自动管理的，堆区间的内存是由程序员通过代码开辟(malloc)和释放的</li>
+</ul>
+<p><strong><em>从python语言角度，栈区间的内存的开辟和释放是系统自动管理的，堆区间的内存关键也已经封装好了, 程序员也不需要写代码来开辟空间和释放空间</em></strong></p>
+<p>#####a.python中变量本身是存在栈区间的，函数调用过程是在栈区间; 对象都是存在堆区间(python中所有数据都是对象)</p>
+<p>#####b.变量赋值过程：先堆区间开辟空间将数据存起来， 然将数据对应的地址存到栈区间的变量中。<br>             数字和字符串比较特殊，赋值的时候不会直接开辟空间，而是先检测之前有没有存储过这个数据，<br>             如果有就用之前的数据的地址</p>
+<p>#####2.内存释放(垃圾回收机制)原理：<br><strong><em>python中的每个对象都有一个属性叫’引用计数’,表示当前对象的引用的个数。判断一个对象是否销毁就看对象的引用计数是否为0；<br>为0的就销毁，不为0的就不销毁。</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">getrefcount函数：</span><br><span class="line">getrefcount(对象)  -&gt; 获取对象的引用计数</span><br><span class="line"></span><br><span class="line">from sys import getrefcount</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    list1 = [1, 2]</span><br><span class="line">    print(getrefcount(list1))      # 2</span><br><span class="line"></span><br><span class="line">    # 使用不同的变量存对象地址会增加引用计数</span><br><span class="line">    list2 = list1</span><br><span class="line">    print(getrefcount(list1))     # 3</span><br><span class="line"></span><br><span class="line">    [1, list1]</span><br><span class="line">    print(getrefcount(list1))    # 3</span><br><span class="line"></span><br><span class="line">    # def func1(obj):</span><br><span class="line">    #     print(getrefcount(list1))</span><br><span class="line">    #</span><br><span class="line">    # func1(list1)</span><br><span class="line"></span><br><span class="line">    print(getrefcount(list1))</span><br><span class="line"></span><br><span class="line">    list1 = []</span><br><span class="line">    print(getrefcount(list2))   # 2</span><br><span class="line"></span><br><span class="line">    del list2</span><br><span class="line">    # print(getrefcount(list2))   # UnboundLocalError</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # def getrefcount(obj):</span><br><span class="line">    #     obj = list1</span><br><span class="line">    #     获取obj的引用计数</span><br><span class="line"></span><br><span class="line">    bullets = [&#123;&apos;x&apos;: 10, &apos;y&apos;: 20&#125;, &#123;&apos;x&apos;: 30, &apos;y&apos;: 10&#125;, &#123;&apos;x&apos;: 100, &apos;y&apos;: 200&#125;]</span><br><span class="line">    del bullets[2]</span><br><span class="line"></span><br><span class="line">    bullets.pop(0)</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-eea00471b253d02c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

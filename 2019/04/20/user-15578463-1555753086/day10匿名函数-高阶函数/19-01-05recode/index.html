@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <ul>
+<li><p>1.函数的概念<br>函数是实现某一特定功能的代码段的封装</p>
+</li>
+<li><p>2.函数的声明/定义<br>def 函数名(形参列表):<br>  函数体</p>
+</li>
+</ul>
+<p>形参: 可以看成是声明在函数中的变量; 作用是将函数外部的数据传递到函数内部<br>函数体: 函数说明文档, 实现函数功能的代码段, return 语句</p>
+<p>####(重点!)声明函数的时候不会执行函数体</p>
+<ul>
+<li>3.函数的调用<br>函数名(实参列表)  </li>
+</ul>
+<p>####(重点!)函数调用过程:<br>回到函数声明的位置<br>传参(用实参给形参赋值) - 保证每个参数都值<br>执行函数体<br>结束后，确定返回值 - 自然死亡/遇到return<br>返回函数调用的位置  - 这个时候函数调用表达式的值才是之前确定返回值  </p>
+<ul>
+<li><p>4.函数的参数<br>位置参数和关键字参数<br>参数默认值<br>参数类型说明<br>不定长参数: 形参前加* -&gt; 将形参变成元祖, 形参前加** -&gt; 将形参变成字典  </p>
+</li>
+<li><p>5.函数的返回值 - 将函数内部传递到函数的外面</p>
+</li>
+<li><p>a.怎么确定函数的返回值<br>看执行函数的时候会不会遇到return, 遇到了return 后面的值就是返回值。没有遇到返回值就是None</p>
+</li>
+<li><p>b.怎么获取函数的返回值<br>通过获取函数调用表达式的值来获取返回值<br>普通数据能做的事情返回值都可以做</p>
+</li>
+</ul>
+<p>注意：每次调用函数，都会重新获取返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">def func(num: int):</span><br><span class="line">    return [1, 2] * num</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list1 = [func(3), 100]</span><br><span class="line">list1[0].append(100)</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">print(func(3))</span><br><span class="line">result = func(2)</span><br><span class="line">print(func(3)[0])</span><br><span class="line">print(func(3)[:3])</span><br><span class="line">for x in func(2):</span><br><span class="line">    print(x)</span><br><span class="line"></span><br><span class="line">func(3).append(10)</span><br><span class="line">print(func(3))</span><br><span class="line"></span><br><span class="line">result = func(3)</span><br><span class="line">result.append(10)</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&apos;=======================&apos;)</span><br><span class="line">def func1(x):</span><br><span class="line">    print(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func2(n):</span><br><span class="line">    # n=4</span><br><span class="line">    return n * 2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func3(x):</span><br><span class="line">    # x = 3</span><br><span class="line">    # return func2(4)</span><br><span class="line">    return func2(x+1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func1(func2(2))</span><br><span class="line"></span><br><span class="line">print(func3(3))</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-ada636fe1075edf4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

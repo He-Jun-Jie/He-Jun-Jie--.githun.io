@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>#####1.什么是字典(dict)</p>
+<ul>
+<li>python提供的容器型数据类型，可变并且无序<br>可变 - 支持元素的增删改<br>无序 - 不支持下标操作</li>
+</ul>
+<p>#####2.字面量和元素</p>
+<ul>
+<li><p>用大括号括起来，里面多个键值对，每个键值对用逗号隔开。键值对就是字典的元素。<br>{key1:value1, key2:value2, key3:value3…}</p>
+</li>
+<li><p>键值对-  键/key:值/value(键值对); 键值对必须成对出现，而且脱离字典单独出现没有意义<br>键/key - 必须是不可变的, 而且是唯一的。实际一般将字符串作为键<br>值/value - 可以是任意类型的数据</p>
+</li>
+<li><p>注意，字典存储数据，实质是通过值来存储的。key是值对应的标签和获取值的方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;&#125;    # 空字典</span><br><span class="line">print(type(dict1))</span><br><span class="line"></span><br><span class="line">dict1 = &#123;&apos;a&apos;: 100, 10: 200, (1, 2): &apos;abc&apos;, &apos;a&apos;: 111, &apos;a&apos;: [1, 11, 111]&#125;</span><br><span class="line">print(dict1)   # &#123;&apos;a&apos;: [1, 11, 111], 10: 200, (1, 2): &apos;abc&apos;&#125;, key唯一</span><br><span class="line"></span><br><span class="line"># dict2 = &#123;[1, 2]: 120&#125;   # TypeError: unhashable type: &apos;list&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-1cad23073313afc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="key值只能是唯一不可重复"></p>
+<p>####3.什么时候使用字典：多个没有相同意义的数据（需要区分）,就使用字典。例如：保存一个人的不同信息，一辆车的不同信息</p>
+<ul>
+<li>什么时候使用列表: 存储的多个数据是有相同意义的数据(不需要区分),就使用列表.例如：保存一个班的学生信息，保存所有的价格<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">person = [&apos;xiaohua&apos;, 18, &apos;girl&apos;, 160, 90, 89]</span><br><span class="line">print(person[1])</span><br><span class="line">person[-2]</span><br><span class="line"></span><br><span class="line">person = &#123;&apos;name&apos;: &apos;xiaohua&apos;, &apos;age&apos;: 18, &apos;sex&apos;: &apos;girl&apos;, &apos;height&apos;: 160, &apos;weight&apos;: 90, &apos;score&apos;: 89&#125;</span><br><span class="line">print(person[&apos;age&apos;])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-33557bc2064ba714.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="字典使用情景"></p>
+<h4 id="练习-声明一个变量保存一个班的学生信息-4个学生-，每个学生需要保存姓名-电话和年龄"><a href="#练习-声明一个变量保存一个班的学生信息-4个学生-，每个学生需要保存姓名-电话和年龄" class="headerlink" title="练习: 声明一个变量保存一个班的学生信息(4个学生)，每个学生需要保存姓名,电话和年龄"></a>练习: 声明一个变量保存一个班的学生信息(4个学生)，每个学生需要保存姓名,电话和年龄</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">all_students = [</span><br><span class="line">    &#123;&apos;name&apos;: &apos;小明&apos;, &apos;tel&apos;: &apos;23897823&apos;, &apos;age&apos;: 20&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;张三&apos;, &apos;tel&apos;: &apos;238722111&apos;, &apos;age&apos;: 28&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;李四&apos;, &apos;tel&apos;: &apos;2111111222&apos;, &apos;age&apos;: 18&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;xiaohua&apos;, &apos;tel&apos;: &apos;111228233&apos;, &apos;age&apos;: 30&#125;</span><br><span class="line">]</span><br><span class="line">print(all_students[0])</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-04f2213f2a69a1cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="练习"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

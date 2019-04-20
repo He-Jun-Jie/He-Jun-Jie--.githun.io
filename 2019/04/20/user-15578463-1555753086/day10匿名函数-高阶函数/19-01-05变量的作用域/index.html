@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <ul>
+<li><p>1.什么是变量的作用域<br>就是变量能够使用的范围  </p>
+</li>
+<li><p>2.全局变量和局部变量<br>a.全局变量 - 没有声明在函数或者类中的变量都是全局变量<br>全局变量的作用域是从声明开始，到整个文件结束</p>
+</li>
+<li><p>b.局部变量 - 声明在函数或者类中的变量就是局部变量<br>局部变量的作用域是从声明开始，到函数结束</p>
+</li>
+</ul>
+<ul>
+<li>总结：当我们调用函数的时候，系统会自动在栈区间专门为这个函数开辟一块独立的内容空间，<br>   用来保存在函数中声明的变量(形参也是属于声明在函数中的变量)。当函数调用结束后，<br>   这个函数对应的栈区间会自动销毁   — (函数调用过程是一个压栈的过程)</li>
+</ul>
+<h5 id="1-全局变量1"><a href="#1-全局变量1" class="headerlink" title="1.全局变量1"></a>1.全局变量1</h5><h5 id="变量a是全局变量"><a href="#变量a是全局变量" class="headerlink" title="变量a是全局变量"></a>变量a是全局变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">a = 100</span><br><span class="line"></span><br><span class="line">print(&apos;外面:&apos;, a)</span><br><span class="line">for x in range(5):</span><br><span class="line">    print(&apos;循环里:&apos;,a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func1():</span><br><span class="line">    print(&apos;函数中:&apos;, a)</span><br><span class="line"></span><br><span class="line">func1()</span><br><span class="line"></span><br><span class="line"># 2.全局变量</span><br><span class="line"># 这儿的y也是全局变量</span><br><span class="line">for y in range(3):</span><br><span class="line">    print(y)</span><br><span class="line"></span><br><span class="line">print(&apos;外面:&apos;, y)</span><br><span class="line"></span><br><span class="line">def func2():</span><br><span class="line">    print(&apos;函数里面:&apos;, y)</span><br><span class="line">func2()</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-dcab03794970989f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="全局变量"></p>
+<h5 id="3-局部变量"><a href="#3-局部变量" class="headerlink" title="3.局部变量"></a>3.局部变量</h5><h5 id="a-函数的形参就相当于声明在函数中的变量，所以是局部变量"><a href="#a-函数的形参就相当于声明在函数中的变量，所以是局部变量" class="headerlink" title="a.函数的形参就相当于声明在函数中的变量，所以是局部变量"></a>a.函数的形参就相当于声明在函数中的变量，所以是局部变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># num1是局部</span><br><span class="line">def func3(num1):</span><br><span class="line">    print(num1)</span><br><span class="line">    for x in range(3):</span><br><span class="line">        print(num1)</span><br><span class="line">func3(10)</span><br><span class="line"></span><br><span class="line"># print(num1)   # 局部变量不能在函数外面使用</span><br><span class="line"></span><br><span class="line"># 函数中的nums，max1和item都是局部变量</span><br><span class="line">def func4(*nums):</span><br><span class="line">    # nums = (1, 89, 9, 887, 0)</span><br><span class="line">    max1 = nums[0]</span><br><span class="line">    for item in nums:</span><br><span class="line">        if item &gt; max1:</span><br><span class="line">            max1 = item</span><br><span class="line">    print(max1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func4(1, 89, 9, 887, 0)</span><br><span class="line"># print(item)</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-c0e3579f929fdd47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="4-如果全局变量和局部变量同名，那么在局部变量的作用域中使用的是局部变量；外部使用的是全局变量"><a href="#4-如果全局变量和局部变量同名，那么在局部变量的作用域中使用的是局部变量；外部使用的是全局变量" class="headerlink" title="4.如果全局变量和局部变量同名，那么在局部变量的作用域中使用的是局部变量；外部使用的是全局变量"></a>4.如果全局变量和局部变量同名，那么在局部变量的作用域中使用的是局部变量；外部使用的是全局变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 全局变量</span><br><span class="line">aa = 100</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func5():</span><br><span class="line">    # 局部变量aa</span><br><span class="line">    aa = 200</span><br><span class="line">    print(&apos;函数里&apos;, aa)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func5()</span><br><span class="line"></span><br><span class="line">print(&apos;外部:&apos;, aa)</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-cb2a8d0846173e65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="全局变量与局部变量"></p>
+<p>3.global - 在函数中声明一个全局变量(只能在函数中使用)<br>在函数中:<br>global 变量名<br>变量名 = 值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">bb = 111</span><br><span class="line">def func6():</span><br><span class="line">    global bb</span><br><span class="line">    bb = 222</span><br><span class="line">    print(&apos;函数里:&apos;,bb)</span><br><span class="line"></span><br><span class="line">    global aaa</span><br><span class="line">    aaa = 100</span><br><span class="line">    print(aaa)    # 100</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func6()</span><br><span class="line">print(bb)</span><br><span class="line">print(aaa)   # 100</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-84e0c61a1a345994.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ol start="4">
+<li>nonlocal - 想要在局部的局部中去修改布局变量的值，就使用nonlocal对变量进行说明<br>nonlocal 局部变量<br>局部变量 = 值</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def func11():</span><br><span class="line">    abc = 123</span><br><span class="line">    def func22():</span><br><span class="line">        nonlocal abc</span><br><span class="line">        abc = 333</span><br><span class="line">        print(&apos;func22&apos;, abc)</span><br><span class="line">    func22()</span><br><span class="line"></span><br><span class="line">    print(&apos;func11&apos;, abc)</span><br><span class="line"></span><br><span class="line">func11()</span><br><span class="line"></span><br><span class="line"># func22 333</span><br><span class="line"># func11 123</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-92f5900ad8613408.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">list1 = []</span><br><span class="line">i = 0   [lambda x: x*i]</span><br><span class="line">i = 1   [lambda x: x*i, lambda x: x*i]</span><br><span class="line">i = 2   [lambda x: x*i, lambda x: x*i, lambda x: x*i]</span><br><span class="line">i = 3   [lambda x: x*i, lambda x: x*i, lambda x: x*i, lambda x: x*i]</span><br><span class="line">i = 4   [lambda x: x*i, lambda x: x*i, lambda x: x*i, lambda x: x*i, lambda x: x*i]</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">list1 = []</span><br><span class="line">for i in range(5):</span><br><span class="line">    list1.append(lambda x: x*i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(list1[0](3))</span><br><span class="line"># lambda  x: x* i   x = 3 return 3*4</span><br><span class="line">print(list1[3](3))</span><br><span class="line"># lambda  x: x* i   x  = 3  return 3*4</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line"># list1 = [lambda x: x*2]</span><br><span class="line"># print(list1[0](100))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func1():</span><br><span class="line">    a = [1, 2]</span><br><span class="line">    print(a[10])</span><br><span class="line"># func1()</span><br><span class="line"></span><br><span class="line">a = 10</span><br><span class="line">func1 = lambda x: x*a</span><br><span class="line">a = 20</span><br><span class="line">print(func1(2))   # 40</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15578463-dd9635ac05671eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

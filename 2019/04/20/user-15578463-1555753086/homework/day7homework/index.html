@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>1.已知一个数字列表，求列表中心元素。<br>元素个数为单数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,22,44,2,26,14,6,55,23]</span><br><span class="line">print(list1[len(list1)//2])</span><br></pre></td></tr></table></figure></p>
+<h1 id="元素个数为偶数"><a href="#元素个数为偶数" class="headerlink" title="元素个数为偶数"></a>元素个数为偶数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,22,44,2,26,14,6,55,23,2]</span><br><span class="line">print(list1[len(list1)//2-1],list1[len(list1)//2])</span><br></pre></td></tr></table></figure>
+<p>2.已知一个数字列表，求所有元素和。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list2 = [12,44,22,15,126,45]</span><br><span class="line">sum1 = 0</span><br><span class="line">for num in list2:</span><br><span class="line">    sum1 +=num</span><br><span class="line">print(sum1)</span><br></pre></td></tr></table></figure></p>
+<p>3.已知一个数字列表，输出所有奇数下标元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list2 = [12,44,22,15,126,45]</span><br><span class="line">for index in range(len(list2)):</span><br><span class="line">    if index % 2 != 0:</span><br><span class="line">        print(&apos;奇数下标元素有：&apos;,list2[index])</span><br></pre></td></tr></table></figure></p>
+<p>4.已知一个数字列表，输出所有元素中，值为奇数的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list2 = [12,44,22,15,126,45]</span><br><span class="line">for num in list2:</span><br><span class="line">    if num % 2 != 0:</span><br><span class="line">        print(&apos;值为奇数的元素:%d&apos;% num)</span><br></pre></td></tr></table></figure></p>
+<p>5.已知一个数字列表，将所有元素乘二。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">方法1</span><br><span class="line">list2 = [12,44,22,15,126,45]</span><br><span class="line">for num in range(len(list2)):</span><br><span class="line">    list2[num] *= 2</span><br><span class="line">print(list2)</span><br><span class="line">==================================</span><br><span class="line">方法2</span><br><span class="line">list2 = [12,44,22,15,126,45]</span><br><span class="line">list3 = []</span><br><span class="line">for num in  list2:</span><br><span class="line">    list3.append(num*2)</span><br><span class="line">print(list3)</span><br></pre></td></tr></table></figure></p>
+<p>6.有一个长度是10的列表，数组内有10个人名，要求去掉重复的<br>names = [‘张三’,’王五’,’李四’,’王五’,’王五’,’大黄’,’王五’,’张楚楠’,’大黄’,’张三’,’张无忌’]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">names2 =[]</span><br><span class="line">for name in names:</span><br><span class="line">    if name not in names2:</span><br><span class="line">        names2.append(name)</span><br><span class="line">print(names2)</span><br></pre></td></tr></table></figure></p>
+<p>7.已经一个数字列表(数字大小在0~6535之间), 将列表转换成数字对应的字符列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list2 = [12,44,22,15,126,45]</span><br><span class="line">for num in range(len(list2)):</span><br><span class="line">    num2 = chr(list2[num])</span><br><span class="line">    list2 [num] = num2</span><br><span class="line">print(list2)</span><br><span class="line"></span><br><span class="line">例如: list1 = [97, 98, 99] -&gt; list1 = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>8.用一个列表来保存一个节目的所有分数，求平均分数(去掉一个最高分，去掉一个最低分，求最后得分)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scores = [1,2,3,4]</span><br><span class="line">scores.remove(max(scores))</span><br><span class="line">scores.remove(min(scores))</span><br><span class="line">print(&apos;%.2f&apos;%(sum(scores)/len(scores)))</span><br></pre></td></tr></table></figure></p>
+<p>9.有另个列表A和B，使用列表C来获取两个列表中公共的元素<br>例如: A = [1, ‘a’, 4, 90] B = [‘a’, 8, ‘j’, 1] –&gt; C = [1, ‘a’]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list1 = [14,34,&apos;s&apos;,35,&apos;wd&apos;,&apos;何俊杰&apos;]</span><br><span class="line">list2 = [35,14,&apos;h&apos;,11,54,&apos;s&apos;,&apos;何俊杰&apos;,&apos;l&apos;]</span><br><span class="line">list3 =[]</span><br><span class="line">for item in list1:</span><br><span class="line">    if item in list2:</span><br><span class="line">        list3.append(item)</span><br><span class="line">print(list3)</span><br></pre></td></tr></table></figure></p>
+<p>10.需求：删除所有的指定原素，例如：’海贼王’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;海贼王&apos;, &apos;火影忍者&apos;, &apos;海贼王&apos;, &apos;死神&apos;, &apos;犬夜叉&apos;, &apos;海贼王&apos;, &apos;犬夜叉&apos;, &apos;妖精的尾巴&apos;, &apos;熊出没&apos;, &apos;犬夜叉&apos;, &apos;海贼王&apos;, &apos;一人之下&apos;]</span><br><span class="line">要求：用remove，用del/pop</span><br><span class="line"></span><br><span class="line">remove方法</span><br><span class="line">itme = &apos;犬夜叉&apos;</span><br><span class="line">for name in names[:]:</span><br><span class="line">    if name == itme:</span><br><span class="line">        names.remove(name)</span><br><span class="line">print(names)</span><br><span class="line">=============================</span><br><span class="line">pop方法：</span><br><span class="line">del_item = &apos;犬夜叉&apos;</span><br><span class="line">del_item2 = []</span><br><span class="line">index = 0</span><br><span class="line">while index &lt; len(names):</span><br><span class="line">    if names[index] == del_item:</span><br><span class="line">        del_item3 = names.pop(index)</span><br><span class="line">        del_item2.append(del_item3)</span><br><span class="line">    else:</span><br><span class="line">        index+=1</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>

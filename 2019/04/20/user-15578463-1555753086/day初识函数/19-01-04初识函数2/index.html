@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        何俊杰的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+    <!-- <div class="logo">
+        <a href="/">何俊杰的博客</a>
+    </div> -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="https://github.com/He-Jun-Jie/He-Jun-Jie.github.io" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </div>
+</div>
+        <div class="article">
+    <!-- <div class="article-title">
+        <h2>
+            
+        </h2>
+    </div> -->
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fas fa-edit"></i>
+            2019/04/20 Sat 17:42&nbsp;&nbsp;&nbsp;
+            <span class="just-a-temp"><span>
+            <i class="fas fa-redo"></i>
+            2019/04/20 Sat 17:38
+        </span></span></div>
+    </div>
+    <div class="article-content">
+        <p>1.位置参数和关键字参数(根据实参的传递方式对参数进行的分类)<br>a.位置参数：实参位置和形参保持一致，按形参声明的先后顺序一一赋值<br>b.关键字参数：调用函数的时候以 形参=实参的方式来传参, 这个时候实参的顺序无所谓</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def func1(a, b, c):</span><br><span class="line">    print(a, b, c)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 通过位置参数传参</span><br><span class="line">func1(10, 20, 30)</span><br><span class="line"># 通过关键字参数传参</span><br><span class="line">func1(c=30, a=10, b=20)</span><br><span class="line"># 通过位置参数和关键字参数结合传参(注意关键字参数必须在位置参数的后面)</span><br><span class="line">func1(10, 20, c=30)</span><br></pre></td></tr></table></figure>
+<p>2.参数默认值<br>声明函数的时候，可以给参数赋默认值。<br>如果一个形参有默认值了，那么调用函数的时候这个参数就可以不用传参<br>如果有的形参有默认值，有的形参没有默认值，那么有默认值的形参要放在没有默认值的形参的后面</p>
+<p>调用函数要保证每个参数都有值！</p>
+<h4 id="参数c有默认值，调用函数的时候c可以不用传参"><a href="#参数c有默认值，调用函数的时候c可以不用传参" class="headerlink" title="参数c有默认值，调用函数的时候c可以不用传参"></a>参数c有默认值，调用函数的时候c可以不用传参</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def func2(a, b, c=0):</span><br><span class="line">    # a=100, b=200</span><br><span class="line">    print(a, b, c)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func2(100, 200, 300)</span><br><span class="line">func2(100, 200)</span><br><span class="line">func2(a=100, c=200, b=150)</span><br><span class="line">func2(b=110, a=220)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func3(width, color=&apos;black&apos;, long=10):</span><br><span class="line">    print(&apos;画一条长度是%d宽度是%s的%s线&apos; % (long, width, color))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func3(1)</span><br><span class="line">func3(1, &apos;red&apos;)</span><br><span class="line">func3(2, long=20)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.参数的类型说明 - 类型说明只有提示功能，没有约束功能<br>a.给参数设置默认值， 默认值的类型就是参数的类型<br>b.在形参后面加 :类型名,来说明参数类型。这种方式调用的时候必须传参</li>
+<li>c.函数声明的时候在()后面加 -&gt;类型名, 来说明函数返回值的类型</li>
+</ul>
+<p>#####类型说明的好处：a.对实参的类型进行指导   b.实现函数功能的时候有类型相关的语法提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def list_item(list1: list, index=0)-&gt;int:</span><br><span class="line">    print(list1[index])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list_item([2, 34])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func4(a: list, b):</span><br><span class="line">   a.append(b)</span><br></pre></td></tr></table></figure>
+<p>4.不定长参数 - 函数的参数个数不确定<br>a. 声明函数的时候，在参数名前加 <em> ,可以用来同时获取多个实参的值<br>   – 实质是将带 </em> 的参数编程元祖，将多个实参的值作为元祖的元素</p>
+<p>注意: a.如果函数中既有不定长参数又有普通参数，那么不定长参数必须放在普通参数的后边<br>      b.两个 <em> 的参数要放在一个</em>的后边</p>
+<h5 id="写一个函数，计算多个数的和"><a href="#写一个函数，计算多个数的和" class="headerlink" title="写一个函数，计算多个数的和"></a>写一个函数，计算多个数的和</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">def yt_sum(*nums):</span><br><span class="line">    print(nums)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">yt_sum()</span><br><span class="line">yt_sum(1)</span><br><span class="line">yt_sum(1, 2)</span><br><span class="line">yt_sum(1, 2, 3)</span><br><span class="line">yt_sum(1, 2, 3, 4, 5)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func5(name, age, *scores):</span><br><span class="line">    print(name, scores)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func5(&apos;夏明&apos;, 18, 209)</span><br><span class="line">func5(&apos;小花&apos;, 10, 20, 30)</span><br></pre></td></tr></table></figure>
+<p>b.在参数名前加两个*, 会将这个参数变成一个字典来获取关键字参数的值，其他关键字作为key，实参作为value</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def func6(**nums):</span><br><span class="line">    print(nums)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func6()</span><br><span class="line">func6(a=10)</span><br><span class="line">func6(a=10, b=20)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def func7(*args, **kwargs):</span><br><span class="line">    print(args, kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func7(10, 5, 89)</span><br><span class="line">func7(a=90, b=9, c=90)</span><br><span class="line">func7(90, 89, z=0, v=87)</span><br></pre></td></tr></table></figure>
+<h4 id="写一个函数，计算多个数的和-要求可以使用位置参数也可以使用关键字参数"><a href="#写一个函数，计算多个数的和-要求可以使用位置参数也可以使用关键字参数" class="headerlink" title="写一个函数，计算多个数的和(要求可以使用位置参数也可以使用关键字参数)"></a>写一个函数，计算多个数的和(要求可以使用位置参数也可以使用关键字参数)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def yt_sum(*args, **kwargs):</span><br><span class="line">    sum1 = 0</span><br><span class="line">    # 遍历元祖</span><br><span class="line">    for num in args:</span><br><span class="line">        sum1 += num</span><br><span class="line"></span><br><span class="line">    # 遍历字典</span><br><span class="line">    for key in kwargs:</span><br><span class="line">        sum1 += kwargs[key]</span><br><span class="line"></span><br><span class="line">    print(sum1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">yt_sum(1, 2)</span><br><span class="line">yt_sum(1, 2, 3, a=4, b=5)</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    <div class="totop">ToTOP</div>
+</div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> John Doe <i class="fas fa-angle-double-up"></i>
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/search.js"></script>
+    </div>
+</body>
+
+</html>
